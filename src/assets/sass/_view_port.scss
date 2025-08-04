@@ -1,0 +1,30 @@
+$pc: 1500px;
+$tablet_over: 1281px;
+$tablet: 1280px;
+$sp_over: 961px;
+$sp: 960px;
+@mixin min-pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+@mixin min-tablet {
+  @media (min-width: ($tablet_over)) {
+    @content;
+  }
+}
+@mixin max-tablet {
+  @media (max-width: ($tablet)) {
+    @content;
+  }
+}
+@mixin min-sp {
+  @media (min-width: ($sp_over)) {
+    @content;
+  }
+}
+@mixin max-sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
