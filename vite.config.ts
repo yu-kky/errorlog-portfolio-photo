@@ -15,11 +15,4 @@ export default defineConfig({
   server: {
     open: true,
   },
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `@import "@/assets/sass/global.scss";`,
-      },
-    },
-  },
 })

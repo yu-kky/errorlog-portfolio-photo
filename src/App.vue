@@ -60,6 +60,7 @@ onBeforeUnmount(() => {
 </template>
 
 <style scoped lang="scss">
+@use '@/assets/sass/global' as *;
 body,
 html {
   font-size: 15px;

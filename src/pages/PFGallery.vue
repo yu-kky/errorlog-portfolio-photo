@@ -65,6 +65,7 @@ export default defineComponent({
 s
 
 <style scoped lang="scss">
+@use '@/assets/sass/global' as *;
 .gallery-list {
   display: flex;
   flex-wrap: wrap;

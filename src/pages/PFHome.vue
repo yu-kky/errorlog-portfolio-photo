@@ -18,6 +18,7 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+@use '@/assets/sass/global' as *;
 .gallery-wrapper {
   height: calc(100vh - (20px + 10rem + 80px + 1rem + 0.65rem));
   max-width: 1000px;
