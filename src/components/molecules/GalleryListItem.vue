@@ -3,7 +3,7 @@
     <image-item :item="item" :index="1" />
     <p>
       <strong>{{ item.title }}</strong>
-      <span class="location">{{ item.location }}</span>
+      <span class="location">{{ item.location.prefecture }} - {{ item.location.name }}</span>
       <span class="date">{{ item.date }}</span>
     </p>
   </router-link>
