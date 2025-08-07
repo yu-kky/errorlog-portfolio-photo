@@ -19,7 +19,7 @@ defineProps<{
 </script>
 
 <style scoped lang="scss">
-@use '@/assets/sass/global' as *;
+@use '@/assets/style/global' as *;
 .gallery-list {
   & > div {
     width: calc(100% / 3);
