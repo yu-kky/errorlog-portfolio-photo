@@ -35,15 +35,11 @@ html,
 body {
   font-size: 15px;
   letter-spacing: 0.1rem;
-  color: $charcoal;
   font-family:
     proxima-nova, dnp-shuei-gothic-kin-std, '游ゴシック', 'Yu Gothic', YuGothic,
     'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ ゴシック',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-body {
-  border: 10px solid #b10056;
 }
 </style>
