@@ -1,172 +1,145 @@
-<script setup lang="ts">
-import { ref, onMounted, onUnmounted, computed } from 'vue'
-
-import hero1 from '@/assets/img/hero1.jpg'
-import hero2 from '@/assets/img/hero2.jpg'
-import hero3 from '@/assets/img/hero3.jpg'
-
-const bgList = [hero1, hero2, hero3]
-
-const scrollY = ref(0)
-const currentIndex = ref(0)
-const prevIndex = ref(0)
-const isFadingBg = ref(false)
-
-// ★ ヒーロー滞在時間（vhベースの目安）
-const spacerVH = 150 // ← 100〜200の間で好みへ。まずは150vhくらい
-// ★ セクション1の上余白（vh）
-const firstSectionOffsetVH = 40 // ← 30〜60あたりが自然
-
-// px換算
-const spacerHeight = (spacerVH / 100) * window.innerHeight
-
-// フェード開始/終了を spacer に合わせて調整
-const hideStart = spacerHeight // spacerの終端で開始
-const hideEnd = spacerHeight + 0.6 * window.innerHeight // 0.6画面分で完全に消える
-
-const heroHideProgress = computed(() => {
-  const p = (scrollY.value - hideStart) / (hideEnd - hideStart)
-  return Math.max(0, Math.min(1, p)) // 0〜1に制限
-})
-
-const parallaxY = computed(() => scrollY.value * 0.3)
-
-const heroOpacity = computed(() => 1 - heroHideProgress.value)
-const heroTranslateY = computed(() => `translateY(${-heroHideProgress.value * 20}vh)`)
-const heroGone = computed(() => heroHideProgress.value >= 1)
-
-let ticking = false
-function onScroll() {
-  if (ticking) return
-  ticking = true
-  requestAnimationFrame(() => {
-    scrollY.value = window.scrollY
-    ticking = false
-  })
-}
-
-function onIntersect(entries: IntersectionObserverEntry[]) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const idx = Number(entry.target.getAttribute('data-index'))
-      if (!Number.isNaN(idx) && idx !== currentIndex.value) {
-        prevIndex.value = currentIndex.value
-        currentIndex.value = idx
-        isFadingBg.value = true
-        setTimeout(() => (isFadingBg.value = false), 800)
-      }
-    }
-  })
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', onScroll, { passive: true })
-  const io = new IntersectionObserver(onIntersect, {
-    threshold: 0.5,
-    rootMargin: '-50% 0px -50% 0px',
-  })
-  document.querySelectorAll('.trigger-section').forEach((el) => io.observe(el))
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', onScroll)
-})
-</script>
-
 <template>
-  <div>
-    <!-- 固定ヒーロー -->
-    <section
-      class="hero fixed"
-      :style="{
-        opacity: String(heroOpacity),
-        transform: heroTranslateY,
-        visibility: heroGone ? 'hidden' : 'visible',
-        pointerEvents: heroGone ? 'none' : 'auto',
-      }"
-    >
-      <div class="hero-bg-wrapper">
-        <div
-          class="hero-bg"
-          :style="{
-            backgroundImage: `url(${bgList[prevIndex]})`,
-            transform: `translateY(${parallaxY}px)`,
-            opacity: isFadingBg ? 1 : 0,
-          }"
-        />
-        <div
-          class="hero-bg"
-          :style="{
-            backgroundImage: `url(${bgList[currentIndex]})`,
-            transform: `translateY(${parallaxY}px)`,
-            opacity: 1,
-          }"
-        />
-      </div>
+  <div id="app" class="snap">
+    <!-- ファーストビュー -->
+    <section class="hero" ref="hero">
+      <div class="hero-bg" ref="heroBg"></div>
       <div class="hero-content">
-        <!-- 必要に応じて表示切替 -->
-        <h1 v-if="currentIndex === 0">ポートフォリオへようこそ</h1>
+        <h1>Between failure and creation.</h1>
       </div>
     </section>
 
-    <!-- spacerでヒーロー滞在時間を確保 -->
-    <div class="hero-spacer" :style="{ height: spacerHeight + 'px' }"></div>
-
-    <!-- 通常のセクション -->
-    <section
-      v-for="(_, i) in bgList"
-      :key="i"
-      class="trigger-section"
-      :data-index="i"
-      :style="i === 0 ? { paddingTop: `${firstSectionOffsetVH}vh` } : undefined"
-    >
-      <div class="section-content">セクション {{ i + 1 }}</div>
+    <!-- 白背景のセクション -->
+    <section class="white-section">
+      <div class="frame">
+        <p>ここから作品やコンテンツを表示</p>
+      </div>
     </section>
   </div>
 </template>
 
-<style scoped lang="scss">
-.hero.fixed {
-  position: fixed;
-  inset: 0 0 auto 0;
-  height: 100vh;
-  z-index: 10;
-  will-change: opacity, transform;
-  overflow: hidden;
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+
+const hero = ref<HTMLElement | null>(null)
+const heroBg = ref<HTMLElement | null>(null)
+const heroText = ref<HTMLElement | null>(null)
+let observer: IntersectionObserver | null = null
+
+onMounted(() => {
+  observer = new IntersectionObserver(
+    ([entry]) => {
+      document.body.classList.toggle('white-bg', entry.isIntersecting === false)
+    },
+    { threshold: 0.1 },
+  )
+  if (hero.value) observer.observe(hero.value)
+
+  // パララックス用スクロールイベント
+  window.addEventListener('scroll', handleParallax)
+})
+
+onBeforeUnmount(() => {
+  if (hero.value && observer) observer.unobserve(hero.value)
+  window.removeEventListener('scroll', handleParallax)
+})
+
+/**
+ * パララックス時の背景アニメーション
+ */
+function handleParallax() {
+  const scrollY = window.scrollY
+  if (hero.value) {
+    const ratio = Math.min(1, window.scrollY / window.innerHeight)
+    hero.value.style.opacity = String(1 - ratio)
+    hero.value.style.backgroundPositionY = `${scrollY * 0.4}px`
+  }
+  const scale = 1 + (scrollY / window.innerHeight) * 0.08
+  if (heroBg.value) {
+    heroBg.value.style.transform = `scale(${scale}) translate3d(0, ${scrollY * 0.3}px, 0)`
+  }
+  if (heroText.value) {
+    heroText.value.style.transform = `translate3d(0, ${scrollY * 0.6}px, 0)`
+  }
+}
+</script>
+
+<style>
+html,
+body {
+  height: 100%;
 }
 
-.hero-bg-wrapper {
-  position: absolute;
-  inset: 0;
+body {
+  transition: background-color 0.6s ease;
+  background-color: #272624;
+  color: white;
+
+  &.white-bg {
+    background-color: white;
+    color: #272624;
+  }
+}
+.snap {
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+}
+
+/* ファーストビュー */
+.hero {
+  position: relative;
+  height: 100vh;
   overflow: hidden;
-  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    transition: opacity 1s ease;
+    pointer-events: none;
+    opacity: 1;
+  }
 }
 .hero-bg {
   position: absolute;
-  inset: -5%;
-  background-size: cover;
-  background-position: center;
-  will-change: transform, opacity;
-  transition: opacity 0.8s ease;
+  inset: 0;
+  background: url('@/assets/img/hero1.jpg') center/cover no-repeat; /* coverキープ */
+  will-change: transform;
+  transform-origin: center center;
+}
+.hero-content {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+body.white-bg .hero::after {
+  opacity: 0;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
   text-align: center;
-  padding-top: 40vh;
+  z-index: 2;
+}
+.logo {
+  max-width: 300px;
+  margin-bottom: 1rem;
 }
 
-.hero-spacer {
-  width: 100%;
-}
-
-.trigger-section {
+/* 白背景セクション */
+.white-section {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  background: #272624;
-  color: white;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.frame {
+  border: 2px solid black;
+  padding: 2rem;
 }
 </style>
