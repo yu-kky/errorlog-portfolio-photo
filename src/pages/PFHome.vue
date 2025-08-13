@@ -8,9 +8,17 @@
       </div>
     </section>
 
+    <section class="typo-frame">
+      <div class="edge-top">
+        <img :src="logo" class="logo-img" alt="サイトロゴ" />
+      </div>
+      <span class="typo-anchor edge-left"><span class="typo-vertical">ERRORLOG</span></span>
+      <span class="typo-anchor edge-right"><span class="typo-vertical">Design Works.</span></span>
+    </section>
+
     <!-- 白背景のセクション -->
     <section class="white-section">
-      <div class="frame">
+      <div class="main">
         <p>ここから作品やコンテンツを表示</p>
       </div>
     </section>
@@ -19,6 +27,7 @@
 
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
+import logo from '@/assets/logo.png'
 
 const hero = ref<HTMLElement | null>(null)
 const heroBg = ref<HTMLElement | null>(null)
@@ -64,11 +73,6 @@ function handleParallax() {
 </script>
 
 <style>
-html,
-body {
-  height: 100%;
-}
-
 body {
   transition: background-color 0.6s ease;
   background-color: #272624;
@@ -103,6 +107,9 @@ body {
     pointer-events: none;
     opacity: 1;
   }
+  .white-bg & {
+    opacity: 0;
+  }
 }
 .hero-bg {
   position: absolute;
@@ -115,18 +122,51 @@ body {
   position: relative;
   z-index: 1;
   will-change: transform;
-}
-body.white-bg .hero::after {
-  opacity: 0;
+  text-align: center;
 }
 
-.hero-content {
-  text-align: center;
-  z-index: 2;
+/** ロゴ枠 */
+.typo-frame {
+  position: fixed;
+  inset: 0;
+  height: 100svh;
+  height: 100dvh;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 10;
 }
-.logo {
-  max-width: 300px;
-  margin-bottom: 1rem;
+.edge-top {
+  padding: 1.5rem;
+}
+.logo-img {
+  filter: invert(1);
+  transition: filter 0.4s ease;
+  width: 4rem;
+
+  .white-bg & {
+    filter: none;
+  }
+}
+.typo-anchor,
+.typo-anchor {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &.edge-left {
+    left: var(--edge-gap, 3rem);
+  }
+  &.edge-right {
+    right: var(--edge-gap, 3rem);
+  }
+}
+.typo-vertical {
+  writing-mode: vertical-rl;
+  text-orientation: sideways;
+  white-space: nowrap;
+  line-height: 1;
+  letter-spacing: 1.2rem;
+  font-weight: bold;
 }
 
 /* 白背景セクション */
@@ -138,7 +178,7 @@ body.white-bg .hero::after {
   align-items: center;
   justify-content: center;
 }
-.frame {
+.main {
   border: 2px solid black;
   padding: 2rem;
 }
