@@ -11,6 +11,14 @@
     <section class="typo-frame">
       <div class="edge-top">
         <img :src="logo" class="logo-img" alt="ERRORLOG" />
+
+        <nav class="top-menu" aria-label="Main">
+          <ul>
+            <li><RouterLink to="/about">ABOUT</RouterLink></li>
+            <li><RouterLink to="/gallery">GALLERY</RouterLink></li>
+            <li><RouterLink to="/contact">CONTACT</RouterLink></li>
+          </ul>
+        </nav>
       </div>
       <span class="typo-anchor edge-left"><span class="typo-vertical">ERRORLOG</span></span>
       <span class="typo-anchor edge-right"><span class="typo-vertical">Design Works.</span></span>
@@ -173,6 +181,34 @@ body {
     filter: none;
   }
 }
+.top-menu {
+  position: fixed;
+  top: calc(env(safe-area-inset-top, 0px) + 20px);
+  right: calc(env(safe-area-inset-right, 0px) + 24px);
+  z-index: 1200;
+  pointer-events: auto;
+
+  ul {
+    display: flex;
+    gap: clamp(16px, 2.4vw, 32px);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: currentColor;
+    opacity: 0.9;
+    line-height: 1;
+    padding-bottom: 4px; /* 下線の余白 */
+    position: relative;
+  }
+}
 .typo-anchor,
 .typo-anchor {
   position: absolute;
@@ -193,7 +229,7 @@ body {
   line-height: 1;
   font-size: 1rem;
   letter-spacing: 1.2rem;
-  font-weight: bold;
+  font-weight: 600;
   font-family: 'Poppins', sans-serif;
 }
 .edge-bottom {
