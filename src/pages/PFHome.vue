@@ -36,7 +36,7 @@
     <section class="white-section">
       <div class="main">
         <div class="carousel">
-          <GalleryCarousel :images="imgs" alt="work preview" :auto="false" />
+          <GalleryCarousel :images="imgs" alt="work preview" :auto="true" />
         </div>
       </div>
     </section>

@@ -3,10 +3,10 @@ import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
 
 const props = withDefaults(
   defineProps<{
-    images: string[] // 画像URL配列
-    alt?: string // altの共通文言
-    auto?: boolean // 自動再生するか
-    interval?: number // 自動再生の間隔(ms)
+    images: string[]
+    alt?: string
+    auto?: boolean
+    interval?: number
     startIndex?: number
   }>(),
   {
@@ -41,7 +41,6 @@ watch(
   (v) => (v ? start() : stop()),
 )
 
-/* スワイプ（ボックス内のみ） */
 let downX = 0,
   downY = 0,
   dragging = false
@@ -52,7 +51,6 @@ const onPointerDown = (e: PointerEvent) => {
 }
 const onPointerMove = (e: PointerEvent) => {
   if (!dragging) return
-  // 横方向のみ反応。縦はページスクロールを優先
 }
 const onPointerUp = (e: PointerEvent) => {
   if (!dragging) return
@@ -66,7 +64,6 @@ const onPointerUp = (e: PointerEvent) => {
 </script>
 
 <template>
-  <!-- 親の四角（額縁）に対して width/height:100% で埋め込む前提 -->
   <div
     class="inline-carousel"
     @pointerdown="onPointerDown"
@@ -76,15 +73,10 @@ const onPointerUp = (e: PointerEvent) => {
     @mouseenter="stop"
     @mouseleave="start"
   >
-    <transition name="fade" mode="out-in">
+    <transition-group name="xfade" tag="div" class="stage">
       <img :key="i" class="slide" :src="images[i]" :alt="alt" decoding="async" loading="lazy" />
-    </transition>
+    </transition-group>
 
-    <!-- 矢印（必要なければ外してOK） -->
-    <button class="arrow left" @click="prev" aria-label="Previous">‹</button>
-    <button class="arrow right" @click="next" aria-label="Next">›</button>
-
-    <!-- ドット（任意） -->
     <div class="dots" role="tablist" aria-label="Slides">
       <button
         v-for="(src, idx) in images"
@@ -105,53 +97,37 @@ const onPointerUp = (e: PointerEvent) => {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /* 重要：縦スクロールは許可、横は自前で扱う */
   touch-action: pan-y;
   user-select: none;
   -webkit-user-select: none;
 }
-
 .slide {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* 四角の中でちょうど良くトリミング */
+  object-fit: cover;
   display: block;
 }
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 
-/* フェード */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.35s ease;
+  & > .slide {
+    position: absolute;
+    inset: 0;
+  }
 }
-.fade-enter-from,
-.fade-leave-to {
+.xfade-enter-active,
+.xfade-leave-active {
+  transition: opacity 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.xfade-enter-from {
   opacity: 0;
 }
-
-/* 矢印（細線・currentColor） */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
-  border: 1px solid currentColor;
-  background: transparent;
-  color: currentColor;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 1;
-  opacity: 0.9;
+.xfade-leave-to {
+  opacity: 0;
 }
-.arrow.left {
-  left: 8px;
-}
-.arrow.right {
-  right: 8px;
-}
-
-/* ドット */
 .dots {
   position: absolute;
   left: 50%;
@@ -163,18 +139,16 @@ const onPointerUp = (e: PointerEvent) => {
 .dot {
   width: 7px;
   height: 7px;
-  border: 1px solid currentColor;
+  border: 1px solid white;
   border-radius: 50%;
   background: transparent;
   opacity: 0.6;
   cursor: pointer;
 }
 .dot.active {
-  background: currentColor;
+  background: white;
   opacity: 1;
 }
-
-/* 低モーション配慮 */
 @media (prefers-reduced-motion: reduce) {
   .fade-enter-active,
   .fade-leave-active {
