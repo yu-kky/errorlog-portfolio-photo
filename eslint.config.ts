@@ -28,7 +28,8 @@ export default defineConfigWithVueTs(
   {
     files: ['**/*.{js,ts,vue}'],
     rules: {
-      'no-unused-expressions': [
+      'no-unused-expressions': 'off',
+      '@typescript-eslint/no-unused-expressions': [
         'error',
         {
           allowTernary: true,

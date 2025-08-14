@@ -49,7 +49,7 @@ const onPointerDown = (e: PointerEvent) => {
   downX = e.clientX
   downY = e.clientY
 }
-const onPointerMove = (e: PointerEvent) => {
+const onPointerMove = () => {
   if (!dragging) return
 }
 const onPointerUp = (e: PointerEvent) => {
