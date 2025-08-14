@@ -19,10 +19,22 @@ export default defineConfigWithVueTs(
 
   pluginVue.configs['flat/essential'],
   vueTsConfigs.recommended,
-  
+
   {
     ...pluginVitest.configs.recommended,
     files: ['src/**/__tests__/*'],
   },
   skipFormatting,
+  {
+    files: ['**/*.{js,ts,vue}'],
+    rules: {
+      'no-unused-expressions': [
+        'error',
+        {
+          allowTernary: true,
+          allowShortCircuit: true,
+        },
+      ],
+    },
+  },
 )

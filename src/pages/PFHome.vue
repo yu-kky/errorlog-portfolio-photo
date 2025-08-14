@@ -35,7 +35,9 @@
     <!-- 白背景のセクション -->
     <section class="white-section">
       <div class="main">
-        <p>ここから作品やコンテンツを表示</p>
+        <div class="carousel">
+          <GalleryCarousel :images="imgs" alt="work preview" :auto="false" />
+        </div>
       </div>
     </section>
   </div>
@@ -44,11 +46,18 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import logo from '@/assets/logo.png'
+import GalleryCarousel from '@/components/molecules/GalleryCarousel.vue'
 
 const hero = ref<HTMLElement | null>(null)
 const heroBg = ref<HTMLElement | null>(null)
 const heroText = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
+
+const imgs = [
+  new URL('@/assets/img/hero1.jpg', import.meta.url).toString(),
+  new URL('@/assets/img/hero2.jpg', import.meta.url).toString(),
+  new URL('@/assets/img/hero3.jpg', import.meta.url).toString(),
+]
 
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -87,17 +96,7 @@ function handleParallax() {
   }
 }
 </script>
-
-<style>
-@keyframes scrollBounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-4px);
-  }
-}
+<style lang="scss">
 body {
   transition: background-color 0.6s ease;
   background-color: #272624;
@@ -108,6 +107,18 @@ body {
     color: #272624;
   }
 }
+</style>
+<style scoped lang="scss">
+@keyframes scrollBounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
 .snap {
   height: 100%;
   scroll-snap-type: y mandatory;
@@ -291,8 +302,8 @@ body {
   align-items: center;
   justify-content: center;
 }
-.main {
-  border: 2px solid black;
-  padding: 2rem;
+.carousel {
+  width: min(800px, 80vw);
+  aspect-ratio: 16 / 9;
 }
 </style>
