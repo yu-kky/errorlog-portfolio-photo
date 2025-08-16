@@ -34,9 +34,14 @@
 
     <!-- 白背景のセクション -->
     <section class="white-section">
-      <div class="main">
+      <div class="carousel-wrapper">
         <div class="carousel">
           <GalleryCarousel :images="imgs" alt="work preview" :auto="true" />
+        </div>
+      </div>
+      <div class="gallery-wrapper">
+        <div class="gallery">
+          <GalleryList :is-preview="true" />
         </div>
       </div>
     </section>
@@ -47,6 +52,7 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import logo from '@/assets/logo.png'
 import GalleryCarousel from '@/components/molecules/GalleryCarousel.vue'
+import GalleryList from '@/components/molecules/GalleryList.vue'
 
 const hero = ref<HTMLElement | null>(null)
 const heroBg = ref<HTMLElement | null>(null)
@@ -295,15 +301,23 @@ body {
 
 /* 白背景セクション */
 .white-section {
-  min-height: 100vh;
-  height: 100vh;
   scroll-snap-align: start;
+}
+.carousel-wrapper {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  .carousel {
+    width: min(800px, 80vw);
+    aspect-ratio: 16 / 9;
+  }
 }
-.carousel {
-  width: min(800px, 80vw);
-  aspect-ratio: 16 / 9;
+.gallery-wrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

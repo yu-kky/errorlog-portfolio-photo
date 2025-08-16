@@ -7,11 +7,6 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/pages/PFHome.vue'),
   },
   {
-    path: '/gallery',
-    name: 'gallery',
-    component: () => import('@/pages/PFGallery.vue'),
-  },
-  {
     path: '/gallery/:id',
     name: 'photo',
     component: () => import('@/pages/PFPhoto.vue'),

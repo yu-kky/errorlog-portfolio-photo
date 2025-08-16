@@ -1,7 +1,9 @@
 <template>
   <router-link :to="`/gallery/${item.id}`">
-    <image-item :item="item" :index="1" />
-    <p>
+    <div class="thumb">
+      <image-item :item="item" :index="1" />
+    </div>
+    <p class="thumb-caption">
       <strong>{{ item.title }}</strong>
       <span class="location">{{ item.location.prefecture }} - {{ item.location.name }}</span>
       <span class="date">{{ item.date }}</span>
@@ -20,62 +22,36 @@ defineProps<{
 
 <style scoped lang="scss">
 @use '@/assets/style/global' as *;
-.gallery-list {
-  & > div {
-    width: calc(100% / 3);
-    margin: 1.5rem 0 0;
-    box-sizing: border-box;
+.thumb {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.thumb-caption {
+  margin: 0.5rem 0;
+
+  & > * {
+    display: block;
+    font-size: 0.87rem;
+    line-height: 1rem;
+    font-weight: lighter;
     @include max-sp {
-      width: 50%;
-      margin: 1rem 0 0;
+      font-size: 0.8rem;
     }
-    &:nth-child(3n + 1) {
-      padding: 0 4% 0 0;
-    }
-    &:nth-child(3n + 2) {
-      padding: 0 2% 0 2%;
-    }
-    &:nth-child(3n) {
-      padding: 0 0 0 4%;
-    }
+  }
+
+  & > span {
+    font-size: 0.65rem;
+    color: $gray;
     @include max-sp {
-      &:nth-child(2n + 1) {
-        padding: 0 1% 0 0;
-      }
-      &:nth-child(2n) {
-        padding: 0 0 0 1%;
+      &.location {
+        display: none;
       }
     }
   }
-
-  p {
-    margin: 0.5rem 0;
-
-    & > * {
-      display: block;
-      font-size: 0.87rem;
-      line-height: 1rem;
-      font-weight: lighter;
-      @include max-sp {
-        font-size: 0.8rem;
-      }
-    }
-
-    & > span {
-      font-size: 0.65rem;
-      color: $gray;
-      @include max-sp {
-        &.location {
-          display: none;
-        }
-      }
-    }
-  }
-
-  a {
-    display: inline-block;
-    color: $charcoal;
-    text-decoration: none;
-  }
+}
+a {
+  display: inline-block;
+  color: $charcoal;
+  text-decoration: none;
 }
 </style>
