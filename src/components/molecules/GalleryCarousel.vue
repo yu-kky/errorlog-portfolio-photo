@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import type { GalleryItem } from '@/api/gallery'
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
+import ImageItem from '../atoms/ImageItem.vue'
 
 const props = withDefaults(
   defineProps<{
-    images: string[]
+    items: GalleryItem[]
     alt?: string
     auto?: boolean
     interval?: number
@@ -18,7 +20,7 @@ const props = withDefaults(
 )
 
 const i = ref(props.startIndex)
-const count = () => props.images.length
+const count = () => props.items.length
 const next = () => (i.value = (i.value + 1) % count())
 const prev = () => (i.value = (i.value - 1 + count()) % count())
 
@@ -74,13 +76,13 @@ const onPointerUp = (e: PointerEvent) => {
     @mouseleave="start"
   >
     <transition-group name="xfade" tag="div" class="stage">
-      <img :key="i" class="slide" :src="images[i]" :alt="alt" decoding="async" loading="lazy" />
+      <ImageItem :key="i" :item="items[i]" :index="1" />
     </transition-group>
 
     <div class="dots" role="tablist" aria-label="Slides">
       <button
-        v-for="(src, idx) in images"
-        :key="src + idx"
+        v-for="(src, idx) in items"
+        :key="idx"
         class="dot"
         :class="{ active: idx === i }"
         @click="i = idx"

@@ -36,12 +36,15 @@
     <section class="white-section">
       <div class="carousel-wrapper">
         <div class="carousel">
-          <GalleryCarousel :images="imgs" alt="work preview" :auto="true" />
+          <GalleryCarousel :items="list" alt="work preview" :auto="true" />
         </div>
       </div>
       <div class="gallery-wrapper">
         <div class="gallery">
           <GalleryList :is-preview="true" />
+          <div class="gallery-more">
+            <RouterLink to="/gallery">All Works →</RouterLink>
+          </div>
         </div>
       </div>
     </section>
@@ -53,17 +56,13 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 import logo from '@/assets/logo.png'
 import GalleryCarousel from '@/components/molecules/GalleryCarousel.vue'
 import GalleryList from '@/components/molecules/GalleryList.vue'
+import { getFeatured, type GalleryItem } from '@/api/gallery'
 
 const hero = ref<HTMLElement | null>(null)
 const heroBg = ref<HTMLElement | null>(null)
 const heroText = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
-
-const imgs = [
-  new URL('@/assets/img/hero1.jpg', import.meta.url).toString(),
-  new URL('@/assets/img/hero2.jpg', import.meta.url).toString(),
-  new URL('@/assets/img/hero3.jpg', import.meta.url).toString(),
-]
+const list = ref([] as GalleryItem[])
 
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -73,6 +72,10 @@ onMounted(() => {
     { threshold: 0.1 },
   )
   if (hero.value) observer.observe(hero.value)
+
+  getFeatured((result: GalleryItem[]) => {
+    list.value = result
+  })
 
   // パララックス用スクロールイベント
   window.addEventListener('scroll', handleParallax)
@@ -319,5 +322,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.gallery-more {
+  text-align: right;
+  margin-top: -20px;
+  a {
+    display: inline-block;
+    border: 1.5px solid #272624;
+    padding: 5px 15px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #272624;
+  }
 }
 </style>

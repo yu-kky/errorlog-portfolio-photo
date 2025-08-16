@@ -42,11 +42,6 @@ defineProps<{
   & > span {
     font-size: 0.65rem;
     color: $gray;
-    @include max-sp {
-      &.location {
-        display: none;
-      }
-    }
   }
 }
 a {

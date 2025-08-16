@@ -5,7 +5,7 @@ import GalleryListItem from './GalleryListItem.vue'
 
 const props = withDefaults(
   defineProps<{
-    isPreview: boolean
+    isPreview?: boolean
   }>(),
   {
     isPreview: false,
@@ -61,8 +61,8 @@ onMounted(() => {
 @use '@/assets/style/global' as *;
 .gallery-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3カラム目安 */
-  gap: 4px; /* カード間の余白 */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
 }
 .loading {
   width: 100%;

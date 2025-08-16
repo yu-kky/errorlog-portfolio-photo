@@ -29,7 +29,7 @@ onBeforeUnmount(() => {
   </transition>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 @use '@/assets/style/global' as *;
 html,
 body {

@@ -53,7 +53,7 @@ export function getListWithPagination(
 }
 
 export function getFeatured(callback: Callback<GalleryItem[]>): void {
-  const featuredIds = [200, 150]
+  const featuredIds = [200, 150, 108]
   setTimeout(() => {
     const result = database.filter((el) => featuredIds.includes(el.id))
     callback(result)
