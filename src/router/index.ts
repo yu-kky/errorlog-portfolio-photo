@@ -5,11 +5,17 @@ const routes: Array<RouteRecordRaw> = [
     path: '/',
     name: 'home',
     component: () => import('@/pages/PFHome.vue'),
+    meta: {
+      mode: 'dark',
+    },
   },
   {
     path: '/gallery',
     name: 'gallery',
     component: () => import('@/pages/PFGallery.vue'),
+    meta: {
+      mode: 'light',
+    },
   },
   {
     path: '/gallery/:id',

@@ -1,33 +1,30 @@
-<script setup lang="ts">
-import logo from '@/assets/logo.png'
-
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-
-const isScrolled = ref(false)
-const isActive = ref(false)
-
-function scroll() {
-  isScrolled.value = document.body.getBoundingClientRect().top < -65
-}
-
-function toggleMenu() {
-  isActive.value = !isActive.value
-}
-
-onMounted(() => {
-  window.addEventListener('scroll', scroll)
-})
-
-onBeforeUnmount(() => {
-  window.removeEventListener('scroll', scroll)
-})
-</script>
-
 <template>
+  <MinimalFrame :mode="mode" :key="$route.fullPath" />
   <transition name="view">
     <router-view />
   </transition>
 </template>
+
+<script setup lang="ts">
+import { useRoute } from 'vue-router'
+import { computed, watchEffect } from 'vue'
+import MinimalFrame from './components/molecules/MinimalFrame.vue'
+
+const route = useRoute()
+console.log(route.meta.mode)
+const mode = computed(() => (route.meta.mode as string) || 'light')
+
+watchEffect(() => {
+  console.log('[route]', route.fullPath, route.name)
+  console.table(
+    route.matched.map((r) => ({
+      path: r.path,
+      name: r.name,
+      mode: (r.meta as any)?.mode,
+    })),
+  )
+})
+</script>
 
 <style lang="scss">
 @use '@/assets/style/global' as *;
