@@ -21,6 +21,25 @@
     "editor": "藤"
   },
   {
+    "id": 191,
+    "title": "プリンセスコネクト!Re:Dive",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "Studio Macaron -Sweets-",
+      "type": "studio"
+    },
+    "date": "2023.10.8",
+    "imgDir": "20231008",
+    "imgNumber": 10,
+    "work": "プリンセスコネクト!Re:Dive",
+    "costume": "通常",
+    "characters": ["ツムギ"],
+    "cast": [{ "character": "ツムギ", "name": "かるた", "account": "@0krt01" }],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
     "id": 152,
     "title": "ACCA13区監察課",
     "category": "cosplay",
