@@ -9,10 +9,10 @@
       </p>
       <div class="grid">
         <div
-          v-for="index in item.imgNumber"
+          v-for="index in item?.imgNumber ?? 0"
           :key="index"
-          :id="index.toString()"
           :class="{ active: isActive(index) }"
+          :ref="setImgRef(index - 1)"
         >
           <image-item :item="item" :index="index" />
         </div>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onBeforeUpdate, onMounted, onUnmounted, ref, type ComponentPublicInstance } from 'vue'
 import { useRoute } from 'vue-router'
 import { findById, type GalleryItem } from '@/api/gallery'
 import ImageItem from '@/components/atoms/ImageItem.vue'
@@ -36,27 +36,43 @@ const scrollY = ref(0)
 const imgScrollTop = ref<number[]>([])
 const isScrollFixed = ref(false)
 
+const imgRefs = ref<HTMLElement[]>([])
+const setImgRef = (i: number) => (el: Element | ComponentPublicInstance | null) => {
+  if (el instanceof HTMLElement) {
+    imgRefs.value[i] = el
+  }
+}
+
+onBeforeUpdate(() => {
+  imgRefs.value.length = 0
+})
+
 const fetchItem = () => {
   findById(id, (data: GalleryItem | undefined) => {
     item.value = data
   })
 }
 
+/**
+ * 現在のスクロール位置を記録
+ * 初回スクロール時の一度のみ、コンテンツの各写真のoffsetTopを記録しておく
+ */
 const handleScroll = () => {
   scrollY.value = window.scrollY
-  if (!isScrollFixed.value && item.value) {
-    const positions: number[] = []
-    for (let i = 1; i <= item.value.imgNumber; i++) {
-      const el = document.getElementById(i.toString())
-      if (el) {
-        positions.push(el.offsetTop)
-      }
-    }
-    imgScrollTop.value = positions
+
+  if (!isScrollFixed.value) {
+    imgScrollTop.value = imgRefs.value
+      .filter((el): el is HTMLElement => el !== null)
+      .map((el) => el.offsetTop)
+
     isScrollFixed.value = true
   }
 }
 
+/**
+ * n番目の写真のoffsetTopが近づいてきたらtrueを返す
+ * @param index
+ */
 const isActive = (index: number) => {
   return scrollY.value > (imgScrollTop.value[index - 1] ?? Infinity) - 500
 }
@@ -103,12 +119,15 @@ onUnmounted(() => {
 <style scoped lang="scss">
 @use '@/assets/style/global' as *;
 .gallery-detail {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+
+  padding-top: 150px;
+  padding-bottom: 40px;
+
   .gallery {
     max-width: 920px;
-    @include max-sp {
-      width: 100%;
-    }
-
     p {
       line-height: 1.2rem;
 

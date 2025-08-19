@@ -24,6 +24,9 @@ const routes: Array<RouteRecordRaw> = [
     props: (route) => ({
       id: Number(route.params.id),
     }),
+    meta: {
+      mode: 'light',
+    },
   },
 ]
 

@@ -7,23 +7,12 @@
 
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import { computed, watchEffect } from 'vue'
+import { computed } from 'vue'
 import MinimalFrame from './components/molecules/MinimalFrame.vue'
 
 const route = useRoute()
 console.log(route.meta.mode)
 const mode = computed(() => (route.meta.mode as string) || 'light')
-
-watchEffect(() => {
-  console.log('[route]', route.fullPath, route.name)
-  console.table(
-    route.matched.map((r) => ({
-      path: r.path,
-      name: r.name,
-      mode: (r.meta as any)?.mode,
-    })),
-  )
-})
 </script>
 
 <style lang="scss">
