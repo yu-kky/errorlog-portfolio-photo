@@ -32,7 +32,6 @@ onMounted(async () => {
 
 const onImageLoad = (e: Event) => {
   const img = e.target as HTMLImageElement
-  console.log(img.naturalHeight > img.naturalWidth)
   isTall.value = img.naturalHeight > img.naturalWidth
 }
 </script>

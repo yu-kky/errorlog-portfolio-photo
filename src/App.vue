@@ -11,7 +11,6 @@ import { computed } from 'vue'
 import MinimalFrame from './components/molecules/MinimalFrame.vue'
 
 const route = useRoute()
-console.log(route.meta.mode)
 const mode = computed(() => (route.meta.mode as string) || 'light')
 </script>
 
