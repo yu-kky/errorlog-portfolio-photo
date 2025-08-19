@@ -127,7 +127,7 @@ onUnmounted(() => {
   padding-bottom: 40px;
 
   .gallery {
-    max-width: 920px;
+    max-width: 800px;
     p {
       line-height: 1.2rem;
 

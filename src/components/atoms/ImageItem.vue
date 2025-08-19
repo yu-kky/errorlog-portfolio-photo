@@ -1,5 +1,7 @@
 <template>
-  <img :src="imgUrl" alt="Gallery Image" />
+  <div :class="{ tall: isTall }">
+    <img :src="imgUrl" alt="Gallery Image" @load="onImageLoad" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -15,6 +17,7 @@ const props = defineProps<{
 const storage = getStorage()
 
 const imgUrl = ref<string>(new URL('@/assets/default.jpg', import.meta.url).href)
+const isTall = ref(false)
 
 onMounted(async () => {
   const imageRef = storageRef(storage, `photo/${props.item.imgDir}/${props.index}.jpg`)
@@ -26,11 +29,25 @@ onMounted(async () => {
       console.warn('画像の取得に失敗:', error)
     })
 })
+
+const onImageLoad = (e: Event) => {
+  const img = e.target as HTMLImageElement
+  console.log(img.naturalHeight > img.naturalWidth)
+  isTall.value = img.naturalHeight > img.naturalWidth
+}
 </script>
 
 <style scoped>
 img {
   max-width: 100%;
   display: block;
+}
+.tall {
+  display: flex;
+  justify-content: center;
+
+  img {
+    width: 450px;
+  }
 }
 </style>
