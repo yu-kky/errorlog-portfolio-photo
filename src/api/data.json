@@ -1,5 +1,24 @@
 [
   {
+    "id": 205,
+    "title": "崩壊スターレイル",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "Studio Colore",
+      "type": "studio"
+    },
+    "date": "2024.9.30",
+    "imgDir": "20240930",
+    "imgNumber": 7,
+    "work": "崩壊スターレイル",
+    "costume": "通常",
+    "characters": ["カフカ"],
+    "cast": [{ "character": "カフカ", "name": "umi", "account": "@uuuuu_mi5" }],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
     "id": 200,
     "title": "PORTRAIT",
     "category": "portrait",
