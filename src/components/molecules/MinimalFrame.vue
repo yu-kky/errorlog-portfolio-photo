@@ -2,7 +2,9 @@
   <div>
     <section class="typo-frame">
       <div class="edge-top">
-        <img :src="logo" class="logo-img" alt="ERRORLOG" :data-mode="mode" />
+        <RouterLink to="/" class="top-logo"
+          ><img :src="logo" class="logo-img" alt="ERRORLOG" :data-mode="mode"
+        /></RouterLink>
 
         <nav class="top-menu" aria-label="Main">
           <ul>
@@ -73,8 +75,13 @@ const mode = props.mode
     }
   }
 }
-.logo-img {
-  width: 4rem;
+.top-logo {
+  display: block;
+  pointer-events: auto;
+
+  .logo-img {
+    width: 4rem;
+  }
 }
 .top-menu {
   position: fixed;
