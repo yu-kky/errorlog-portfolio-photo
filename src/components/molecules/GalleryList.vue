@@ -120,7 +120,6 @@ watch([page, list, isScrollable], ([p, l, s]) => {
 
 .sentinel {
   height: 1px; // 見えない当たり判定
-  outline: 1px dashed rgba(0, 0, 0, 0.2); //debug
 }
 
 .category-wrapper {

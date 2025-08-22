@@ -76,7 +76,7 @@ const onPointerUp = (e: PointerEvent) => {
     @mouseleave="start"
   >
     <transition-group name="xfade" tag="div" class="stage">
-      <ImageItem :key="i" :item="items[i]" :index="1" />
+      <ImageItem :key="i" :item="items[i]" :index="1" v-if="items[i]" />
     </transition-group>
 
     <div class="dots" role="tablist" aria-label="Slides">

@@ -1,8 +1,10 @@
 <template>
   <MinimalFrame :mode="mode" :key="$route.fullPath" />
-  <transition name="view">
-    <router-view />
-  </transition>
+  <router-view v-slot="{ Component }">
+    <transition name="view" mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </router-view>
 </template>
 
 <script setup lang="ts">

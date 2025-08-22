@@ -16,7 +16,8 @@
     "characters": ["カフカ"],
     "cast": [{ "character": "カフカ", "name": "umi", "account": "@uuuuu_mi5" }],
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center top"
   },
   {
     "id": 203,
@@ -52,7 +53,28 @@
       }
     ],
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center bottom"
+  },
+  {
+    "id": 192,
+    "title": "VOCALOID",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "池袋ハロウィンコスプレフェス2023",
+      "type": "event"
+    },
+    "date": "2023.10.29",
+    "imgDir": "20231029",
+    "imgNumber": 3,
+    "work": "VOCALOID",
+    "costume": "通常",
+    "characters": ["初音ミク"],
+    "cast": [{ "character": "初音ミク", "name": "かるた", "account": "@0krt01" }],
+    "photographer": ["藤"],
+    "editor": "藤",
+    "objectPosition": "center bottom"
   },
   {
     "id": 191,
@@ -90,7 +112,8 @@
     "characters": ["ツムギ"],
     "cast": [{ "character": "ツムギ", "name": "かるた", "account": "@0krt01" }],
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center top"
   },
   {
     "id": 189,
@@ -104,6 +127,29 @@
     "date": "2023.9.23",
     "imgDir": "20230923_2",
     "imgNumber": 11,
+    "photographer": ["藤"],
+    "editor": "藤",
+    "objectPosition": "center bottom"
+  },
+  {
+    "id": 180,
+    "title": "チェンソーマン",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "studio continue09",
+      "type": "studio"
+    },
+    "date": "2023.5.4",
+    "imgDir": "20230504",
+    "imgNumber": 6,
+    "work": "チェンソーマン",
+    "costume": "通常 / ナース衣装",
+    "characters": ["マキマ", "パワー"],
+    "cast": [
+      { "character": "マキマ", "name": "umi", "account": "@uuuuu_mi5" },
+      { "character": "パワー", "name": "かるた", "account": "@0krt01" }
+    ],
     "photographer": ["藤"],
     "editor": "藤"
   },
@@ -128,7 +174,8 @@
       { "character": "ニーノ", "name": "藤", "account": "@fujikko_o" }
     ],
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center bottom"
   },
   {
     "id": 151,
@@ -224,7 +271,8 @@
     "imgDir": "20190610",
     "imgNumber": 3,
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center top"
   },
   {
     "id": 104,
@@ -247,7 +295,8 @@
       { "character": "ニーノ", "name": "藤", "account": "@fujikko_o" }
     ],
     "photographer": ["藤", "umi", "sui"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center top"
   },
   {
     "id": 103,
@@ -276,7 +325,8 @@
       { "character": "巡音ルカ", "name": "umi", "account": "@uuuuu_mi5" }
     ],
     "photographer": ["藤", "umi", "(1枚目)イベント撮影スタッフ"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center top"
   },
   {
     "id": 102,
@@ -307,7 +357,8 @@
     "imgNumber": 7,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center bottom"
   },
   {
     "id": 100,
@@ -337,7 +388,8 @@
     "imgDir": "20181110_3",
     "imgNumber": 3,
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center bottom"
   },
   {
     "id": 98,
@@ -450,7 +502,8 @@
     "imgNumber": 3,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center top"
   },
   {
     "id": 92,
@@ -506,7 +559,8 @@
     "characters": ["瑠璃川幸"],
     "cast": [{ "character": "瑠璃川幸", "name": "天", "account": "@sola_la112" }],
     "photographer": ["藤"],
-    "editor": "藤"
+    "editor": "藤",
+    "objectPosition": "center bvottom"
   },
   {
     "id": 89,

@@ -14,6 +14,7 @@ export type GalleryItem = {
   cast?: PhotoCast[]
   photographer: string[]
   editor: string
+  objectPosition?: string
 }
 
 export type PhotoLocation = {

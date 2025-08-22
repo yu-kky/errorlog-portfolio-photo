@@ -1,6 +1,11 @@
 <template>
-  <div :class="{ tall: isTall }">
-    <img :src="imgUrl" alt="Gallery Image" @load="onImageLoad" />
+  <div :class="{ tall: isTall }" class="img-container">
+    <img
+      :src="imgUrl"
+      alt="Gallery Image"
+      @load="onImageLoad"
+      :style="item.objectPosition ? { objectPosition: item.objectPosition } : {}"
+    />
   </div>
 </template>
 
@@ -38,8 +43,16 @@ const onImageLoad = (e: Event) => {
 
 <style scoped>
 img {
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
   display: block;
+}
+.img-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 .tall {
   display: flex;
