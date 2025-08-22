@@ -123,7 +123,7 @@ onUnmounted(() => {
   justify-content: center;
   gap: 24px;
 
-  padding-top: 150px;
+  padding-top: 100px;
   padding-bottom: 40px;
 
   .gallery {
