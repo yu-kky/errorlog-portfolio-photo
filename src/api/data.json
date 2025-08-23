@@ -1,7 +1,27 @@
 [
   {
+    "id": 206,
+    "title": "崩壊スターレイル セーバル",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "池袋ハロウィンコスプレフェス2024",
+      "type": "event"
+    },
+    "date": "2024.10.26",
+    "imgDir": "20241026",
+    "imgNumber": 4,
+    "work": "崩壊スターレイル",
+    "costume": "通常",
+    "characters": ["セーバル"],
+    "cast": [{ "character": "セーバル", "name": "umi", "account": "@uuuuu_mi5" }],
+    "photographer": ["藤"],
+    "editor": "藤",
+    "objectPosition": "center top"
+  },
+  {
     "id": 205,
-    "title": "崩壊スターレイル",
+    "title": "崩壊スターレイル カフカ",
     "category": "cosplay",
     "location": {
       "prefecture": "東京都",
@@ -210,7 +230,7 @@
     },
     "date": "2020.2.16",
     "imgDir": "20200216_1",
-    "imgNumber": 5,
+    "imgNumber": 6,
     "work": "ACCA13区監察課",
     "costume": "通常",
     "characters": ["ジーン", "ロッタ", "ニーノ"],
@@ -250,6 +270,41 @@
     "date": "2020.2.9",
     "imgDir": "20200209",
     "imgNumber": 9,
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 110,
+    "title": "A3! 向坂椋",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "コスプレフェスタTDC",
+      "type": "event"
+    },
+    "date": "2019.12.08",
+    "imgDir": "20191208",
+    "imgNumber": 3,
+    "work": "A3!",
+    "costume": "聖フローラ中学制服",
+    "characters": ["向坂椋"],
+    "cast": [{ "character": "向坂椋", "name": "らきむ" }],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 109,
+    "title": "創作COSPLAY",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "大阪府",
+      "name": "Universal Studio Japan",
+      "type": "outside"
+    },
+    "date": "2019.9.28",
+    "imgDir": "20190928",
+    "imgNumber": 4,
+    "cast": [{ "name": "にぎりやま はこ", "account": "@hamidasuonigiri" }],
     "photographer": ["藤"],
     "editor": "藤"
   },
@@ -568,7 +623,7 @@
     "characters": ["松坂さとう", "神戸しお"],
     "cast": [
       { "character": "松坂さとう", "name": "月瀬骨牌", "account": "@tknskrt623" },
-      { "character": "神戸しお", "name": "にぎりやまはこ", "account": "@hamidasuonigiri" }
+      { "character": "神戸しお", "name": "にぎりやま はこ", "account": "@hamidasuonigiri" }
     ],
     "photographer": ["藤"],
     "editor": "藤"
