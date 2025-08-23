@@ -8,12 +8,7 @@
         <span>{{ item.date }}</span>
       </p>
       <div class="grid">
-        <div
-          v-for="index in item?.imgNumber ?? 0"
-          :key="index"
-          :class="{ active: isActive(index) }"
-          :ref="setImgRef(index - 1)"
-        >
+        <div v-for="index in item?.imgNumber ?? 0" :key="index" ref="imgRefs" class="img-box">
           <image-item :item="item" :index="index" />
         </div>
       </div>
@@ -23,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { onBeforeUpdate, onMounted, onUnmounted, ref, type ComponentPublicInstance } from 'vue'
+import { onMounted, onUnmounted, ref, watch, nextTick } from 'vue'
 import { useRoute } from 'vue-router'
 import { findById, type GalleryItem } from '@/api/gallery'
 import ImageItem from '@/components/atoms/ImageItem.vue'
@@ -31,50 +26,52 @@ import ImageItem from '@/components/atoms/ImageItem.vue'
 const route = useRoute()
 const id = Number(route.params.id)
 
-const item = ref<null | GalleryItem | undefined>(null)
-const scrollY = ref(0)
-const imgScrollTop = ref<number[]>([])
-const isScrollFixed = ref(false)
-
+const item = ref<GalleryItem | null | undefined>(null)
 const imgRefs = ref<HTMLElement[]>([])
-const setImgRef = (i: number) => (el: Element | ComponentPublicInstance | null) => {
-  if (el instanceof HTMLElement) {
-    imgRefs.value[i] = el
-  }
+let observer: IntersectionObserver | null = null
+
+const setupObserver = () => {
+  if (observer) observer.disconnect()
+  observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active')
+          observer?.unobserve(entry.target)
+        }
+      })
+    },
+    {
+      root: null,
+      rootMargin: '0px 0px -100px 0px',
+      threshold: 0.1,
+    },
+  )
 }
 
-onBeforeUpdate(() => {
-  imgRefs.value.length = 0
+onMounted(() => {
+  setupObserver()
+  fetchItem()
 })
 
+onUnmounted(() => {
+  observer?.disconnect()
+})
+
+watch(
+  item,
+  async (val) => {
+    if (!val) return
+    await nextTick()
+    imgRefs.value.forEach((el) => observer?.observe(el))
+  },
+  { immediate: false },
+)
+
 const fetchItem = () => {
-  findById(id, (data: GalleryItem | undefined) => {
+  findById(id, (data) => {
     item.value = data
   })
-}
-
-/**
- * 現在のスクロール位置を記録
- * 初回スクロール時の一度のみ、コンテンツの各写真のoffsetTopを記録しておく
- */
-const handleScroll = () => {
-  scrollY.value = window.scrollY
-
-  if (!isScrollFixed.value) {
-    imgScrollTop.value = imgRefs.value
-      .filter((el): el is HTMLElement => el !== null)
-      .map((el) => el.offsetTop)
-
-    isScrollFixed.value = true
-  }
-}
-
-/**
- * n番目の写真のoffsetTopが近づいてきたらtrueを返す
- * @param index
- */
-const isActive = (index: number) => {
-  return scrollY.value > (imgScrollTop.value[index - 1] ?? Infinity) - 500
 }
 
 const generateDescription = (item: GalleryItem) => {
@@ -105,19 +102,11 @@ const generateDescription = (item: GalleryItem) => {
 
   return parts.join('\n')
 }
-
-onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
-  fetchItem()
-})
-
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll)
-})
 </script>
 
 <style scoped lang="scss">
 @use '@/assets/style/global' as *;
+
 .gallery-detail {
   display: flex;
   justify-content: center;
@@ -148,31 +137,30 @@ onUnmounted(() => {
         overflow-wrap: break-word;
       }
     }
+  }
+}
 
-    .grid {
-      & > div {
-        opacity: 0.85;
-        -webkit-filter: grayscale(100%);
-        transition:
-          -webkit-filter 0.4s ease-in,
-          opacity 0.4s ease-in;
-        margin: 70px 0 0 0;
+.grid > .img-box {
+  opacity: 0.85;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  transition:
+    filter 0.4s ease-in,
+    -webkit-filter 0.4s ease-in,
+    opacity 0.4s ease-in;
+  margin: 70px 0 0 0;
 
-        &:first-child {
-          opacity: 1;
-          margin: 40px 0 0 0;
-          filter: none;
-        }
+  &:first-child {
+    opacity: 1;
+    margin: 40px 0 0 0;
+    filter: none;
+    -webkit-filter: none;
+  }
 
-        &.active {
-          opacity: 1;
-          -webkit-filter: grayscale(0%);
-          transition:
-            -webkit-filter 0.4s ease-in,
-            opacity 0.4s ease-in;
-        }
-      }
-    }
+  &.active {
+    opacity: 1;
+    filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);
   }
 }
 </style>
