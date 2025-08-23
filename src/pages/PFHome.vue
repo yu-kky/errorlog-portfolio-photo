@@ -81,18 +81,6 @@ function handleParallax() {
   }
 }
 </script>
-<style lang="scss">
-body {
-  transition: background-color 0.6s ease;
-  background-color: #272624;
-  color: white;
-
-  &.white-bg {
-    background-color: white;
-    color: #272624;
-  }
-}
-</style>
 <style scoped lang="scss">
 .snap {
   height: 100%;

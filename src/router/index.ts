@@ -42,4 +42,10 @@ const router = createRouter({
   },
 })
 
+router.afterEach((to) => {
+  const mode = (to.meta.mode as string) || 'light'
+  document.body.classList.remove('light', 'dark')
+  document.body.classList.add(mode)
+})
+
 export default router

@@ -1,2 +1,32 @@
 @forward './_colors';
 @forward './_view_port';
+
+html,
+body {
+  font-size: 15px;
+  letter-spacing: 0.1rem;
+  font-family:
+    proxima-nova, dnp-shuei-gothic-kin-std, '游ゴシック', 'Yu Gothic', YuGothic,
+    'Hiragino Kaku Gothic ProN', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ ゴシック',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  transition: background-color 0.6s ease;
+
+  &.dark {
+    background-color: #272624;
+    color: white;
+  }
+  &.light {
+    background-color: white;
+    color: #272624;
+  }
+
+  &.white-bg {
+    background-color: white;
+    color: #272624;
+  }
+}

@@ -11,12 +11,6 @@
 import GalleryList from '@/components/molecules/GalleryList.vue'
 </script>
 
-<style lang="scss">
-body {
-  background-color: white;
-  color: #272624;
-}
-</style>
 <style scoped lang="scss">
 .gallery-heading {
   max-width: 920px;

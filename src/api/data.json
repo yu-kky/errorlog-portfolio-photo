@@ -132,6 +132,52 @@
     "objectPosition": "center bottom"
   },
   {
+    "id": 188,
+    "title": "創作COSPLAY",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "大阪府",
+      "name": "Universal Studio Japan",
+      "type": "outside"
+    },
+    "date": "2023.9.23",
+    "imgDir": "20230923_1",
+    "imgNumber": 7,
+    "work": "創作",
+    "cast": [
+      { "character": "白衣", "name": "sui", "account": "@sui008" },
+      { "character": "中華系", "name": "umi", "account": "@uuuuu_mi5" },
+      {
+        "character": "王子",
+        "name": "にぎりやま はこ",
+        "account": "@hamidasuonigiri"
+      },
+      { "character": "メイド", "name": "かるた", "account": "@0krt01" }
+    ],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 187,
+    "title": "創作COSPLAY",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "コスプレフェスタTDC",
+      "type": "event"
+    },
+    "date": "2023.6.19",
+    "imgDir": "20230619",
+    "imgNumber": 5,
+    "work": "創作",
+    "cast": [
+      { "character": "青メッシュ", "name": "かるた", "account": "@0krt01" },
+      { "character": "マスク", "name": "umi", "account": "@uuuuu_mi5" }
+    ],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
     "id": 180,
     "title": "チェンソーマン",
     "category": "cosplay",
