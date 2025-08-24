@@ -53,40 +53,20 @@ const preload = (src: string) =>
   })
 
 onMounted(async () => {
-  try {
-    const storage = getStorage()
-    const listRef = sRef(storage, props.path)
-    const res = await listAll(listRef)
+  const storage = getStorage()
+  const listRef = sRef(storage, props.path)
+  const res = await listAll(listRef)
 
-    const sorted = [...res.items].sort((a, b) =>
-      a.name.localeCompare(b.name, 'en', { numeric: true, sensitivity: 'base' }),
-    )
+  const sorted = [...res.items].sort((a, b) =>
+    a.name.localeCompare(b.name, 'en', { numeric: true, sensitivity: 'base' }),
+  )
 
-    const fetched = await Promise.all(sorted.map((ref) => getDownloadURL(ref)))
+  const fetched = await Promise.all(sorted.map((ref) => getDownloadURL(ref)))
 
-    // 先に少しプリロード（全件でもOK：枚数6なら誤差）
-    await Promise.all(fetched.map(preload))
+  // 先に少しプリロード（全件でもOK：枚数6なら誤差）
+  await Promise.all(fetched.map(preload))
 
-    urls.value = fetched
-  } catch (e: any) {
-    console.group('Storage error debug')
-    console.log('code:', e?.code)
-    console.log('message:', e?.message)
-    console.log('name:', e?.name)
-    console.log('customData:', e?.customData) // ← v10系だとここに入ること多い
-    console.log('serverResponse:', e?.serverResponse) // ← v9系互換だとここ
-    // Networkのステータスを拾えることもある
-    console.log('httpStatus:', e?.httpStatus, e?.status)
-    console.groupEnd()
-
-    // JSONっぽかったらパースして中を見る
-    try {
-      const sr = e?.customData?.serverResponse ?? e?.serverResponse
-      if (typeof sr === 'string' && sr.startsWith('{')) {
-        console.log('serverResponse.json:', JSON.parse(sr))
-      }
-    } catch {}
-  }
+  urls.value = fetched
 })
 
 // 画像数の変化に応じてインデックス補正＆オート開始
