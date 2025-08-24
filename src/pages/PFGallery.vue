@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="gallery-heading">Gallery <span>(2017 - 2024)</span></h2>
+    <h2 class="gallery-heading">Gallery <span>(2016 - 2024)</span></h2>
     <section class="gallery-container">
       <GalleryList mode="light" />
     </section>

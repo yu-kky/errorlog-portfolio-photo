@@ -432,6 +432,29 @@
     "editor": "藤"
   },
   {
+    "id": 20190615,
+    "title": "A3! 銀泉会",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "神奈川県",
+      "name": "CURAS川崎",
+      "type": "studio"
+    },
+    "date": "2019.6.15",
+    "imgDir": "20190615",
+    "imgNumber": 7,
+    "work": "A3!",
+    "costume": "通常",
+    "characters": ["銀泉会メンバー"],
+    "cast": [
+      { "character": "古市左京", "name": "ぼっこ", "account": "@boookooo_dayo" },
+      { "character": "泉田莇", "name": "由良", "account": "@cos_yura" },
+      { "character": "槙田一朗", "name": "Anz", "account": "@Anz0528" }
+    ],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
     "id": 20190610,
     "title": "CAFE",
     "category": "cafe",
@@ -1424,6 +1447,44 @@
     "editor": "藤"
   },
   {
+    "id": 201708142,
+    "title": "アイドルマスターシンデレラガールズ",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "神奈川県",
+      "name": "CURAS川崎",
+      "type": "studio"
+    },
+    "date": "2017.8.14",
+    "imgDir": "20170814_2",
+    "imgNumber": 8,
+    "work": "アイドルマスターシンデレラガールズ",
+    "costume": "真冬のときめきホワイトニット",
+    "characters": ["一ノ瀬志希"],
+    "cast": [{ "character": "一ノ瀬志希", "name": "要" }],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 201708141,
+    "title": "ノラガミ",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "神奈川県",
+      "name": "CURAS川崎",
+      "type": "studio"
+    },
+    "date": "2017.8.14",
+    "imgDir": "20170814_1",
+    "imgNumber": 4,
+    "work": "ノラガミ",
+    "costume": "通常",
+    "characters": ["毘沙門"],
+    "cast": [{ "character": "毘沙門", "name": "要" }],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
     "id": 20170730,
     "title": "CAFE",
     "category": "cafe",
@@ -1435,6 +1496,21 @@
     "date": "2017.7.30",
     "imgDir": "20170730",
     "imgNumber": 10,
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 20170729,
+    "title": "CAFE",
+    "category": "cafe",
+    "location": {
+      "prefecture": "東京都",
+      "name": "八幡山 / nice & warm",
+      "type": "cafe"
+    },
+    "date": "2017.7.29",
+    "imgDir": "20170729",
+    "imgNumber": 2,
     "photographer": ["藤"],
     "editor": "藤"
   },
