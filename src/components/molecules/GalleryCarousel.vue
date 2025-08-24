@@ -57,7 +57,7 @@ onMounted(async () => {
     const storage = getStorage()
     const listRef = sRef(storage, props.path)
     const res = await listAll(listRef)
-    // 名前順（数値も自然順になるよう numeric オプション）
+
     const sorted = [...res.items].sort((a, b) =>
       a.name.localeCompare(b.name, 'en', { numeric: true, sensitivity: 'base' }),
     )
