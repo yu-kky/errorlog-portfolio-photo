@@ -1,32 +1,39 @@
 <script setup lang="ts">
-import type { GalleryItem } from '@/api/gallery'
 import { ref, onMounted, onBeforeUnmount, watch } from 'vue'
-import ImageItem from '../atoms/ImageItem.vue'
+import { getStorage, ref as sRef, listAll, getDownloadURL } from 'firebase/storage'
 
 const props = withDefaults(
   defineProps<{
-    items: GalleryItem[]
-    alt?: string
+    /** Storage 上のフォルダパス（末尾スラッシュ推奨） */
+    path?: string
     auto?: boolean
     interval?: number
     startIndex?: number
   }>(),
   {
-    alt: '',
+    path: 'carousel/',
     auto: false,
     interval: 4000,
     startIndex: 0,
   },
 )
 
+const urls = ref<string[]>([])
 const i = ref(props.startIndex)
-const count = () => props.items.length
-const next = () => (i.value = (i.value + 1) % count())
-const prev = () => (i.value = (i.value - 1 + count()) % count())
+
+const count = () => urls.value.length
+const next = () => {
+  if (count() === 0) return
+  i.value = (i.value + 1) % count()
+}
+const prev = () => {
+  if (count() === 0) return
+  i.value = (i.value - 1 + count()) % count()
+}
 
 let timer: number | null = null
 const start = () => {
-  if (!props.auto || timer) return
+  if (!props.auto || timer || count() === 0) return
   timer = window.setInterval(next, props.interval)
 }
 const stop = () => {
@@ -36,13 +43,76 @@ const stop = () => {
   }
 }
 
-onMounted(start)
-onBeforeUnmount(stop)
+// 画像の事前読み込み（ふわっと切替を滑らかに）
+const preload = (src: string) =>
+  new Promise<void>((resolve) => {
+    const img = new Image()
+    img.onload = () => resolve()
+    img.onerror = () => resolve()
+    img.src = src
+  })
+
+onMounted(async () => {
+  try {
+    const storage = getStorage()
+    const listRef = sRef(storage, props.path)
+    const res = await listAll(listRef)
+    // 名前順（数値も自然順になるよう numeric オプション）
+    const sorted = [...res.items].sort((a, b) =>
+      a.name.localeCompare(b.name, 'en', { numeric: true, sensitivity: 'base' }),
+    )
+
+    const fetched = await Promise.all(sorted.map((ref) => getDownloadURL(ref)))
+
+    // 先に少しプリロード（全件でもOK：枚数6なら誤差）
+    await Promise.all(fetched.map(preload))
+
+    urls.value = fetched
+  } catch (e: any) {
+    console.group('Storage error debug')
+    console.log('code:', e?.code)
+    console.log('message:', e?.message)
+    console.log('name:', e?.name)
+    console.log('customData:', e?.customData) // ← v10系だとここに入ること多い
+    console.log('serverResponse:', e?.serverResponse) // ← v9系互換だとここ
+    // Networkのステータスを拾えることもある
+    console.log('httpStatus:', e?.httpStatus, e?.status)
+    console.groupEnd()
+
+    // JSONっぽかったらパースして中を見る
+    try {
+      const sr = e?.customData?.serverResponse ?? e?.serverResponse
+      if (typeof sr === 'string' && sr.startsWith('{')) {
+        console.log('serverResponse.json:', JSON.parse(sr))
+      }
+    } catch {}
+  }
+})
+
+// 画像数の変化に応じてインデックス補正＆オート開始
+watch(
+  () => urls.value.length,
+  (len) => {
+    if (len === 0) {
+      i.value = 0
+      stop()
+      return
+    }
+    if (i.value >= len) i.value = 0
+    if (props.auto) start()
+  },
+  { immediate: true },
+)
+
+// auto の切り替えに追従
 watch(
   () => props.auto,
   (v) => (v ? start() : stop()),
 )
 
+onBeforeUnmount(stop)
+
+// --- swipe 操作（既存そのまま） ---
 let downX = 0,
   downY = 0,
   dragging = false
@@ -75,19 +145,29 @@ const onPointerUp = (e: PointerEvent) => {
     @mouseenter="stop"
     @mouseleave="start"
   >
-    <transition-group name="xfade" tag="div" class="stage">
-      <ImageItem :key="i" :item="items[i]" :index="1" v-if="items[i]" />
-    </transition-group>
+    <transition name="xfade">
+      <img
+        v-if="urls[i]"
+        :key="i"
+        class="slide"
+        :src="urls[i]"
+        :alt="'carousel image'"
+        decoding="async"
+        loading="eager"
+        draggable="false"
+      />
+    </transition>
 
-    <div class="dots" role="tablist" aria-label="Slides">
+    <div class="dots" role="tablist" aria-label="Slides" v-if="urls.length > 1">
       <button
-        v-for="(src, idx) in items"
+        v-for="(_, idx) in urls"
         :key="idx"
         class="dot"
         :class="{ active: idx === i }"
         @click="i = idx"
         role="tab"
         :aria-selected="idx === i"
+        :aria-label="`Slide ${idx + 1}`"
       />
     </div>
   </div>
@@ -109,17 +189,6 @@ const onPointerUp = (e: PointerEvent) => {
   object-fit: cover;
   display: block;
 }
-.stage {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-
-  & > .slide {
-    position: absolute;
-    inset: 0;
-  }
-}
 .xfade-enter-active,
 .xfade-leave-active {
   transition: opacity 480ms cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -130,6 +199,7 @@ const onPointerUp = (e: PointerEvent) => {
 .xfade-leave-to {
   opacity: 0;
 }
+
 .dots {
   position: absolute;
   left: 50%;
@@ -152,8 +222,8 @@ const onPointerUp = (e: PointerEvent) => {
   opacity: 1;
 }
 @media (prefers-reduced-motion: reduce) {
-  .fade-enter-active,
-  .fade-leave-active {
+  .xfade-enter-active,
+  .xfade-leave-active {
     transition: none;
   }
 }

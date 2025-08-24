@@ -12,7 +12,7 @@
     <section class="white-section">
       <div class="carousel-wrapper">
         <div class="carousel">
-          <GalleryCarousel :items="list" alt="work preview" :auto="true" />
+          <GalleryCarousel alt="work preview" :auto="true" />
         </div>
       </div>
       <div class="gallery-wrapper">
@@ -32,13 +32,11 @@ import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 import GalleryCarousel from '@/components/molecules/GalleryCarousel.vue'
 import GalleryList from '@/components/molecules/GalleryList.vue'
-import { getFeatured, type GalleryItem } from '@/api/gallery'
 
 const hero = ref<HTMLElement | null>(null)
 const heroBg = ref<HTMLElement | null>(null)
 const heroText = ref<HTMLElement | null>(null)
 let observer: IntersectionObserver | null = null
-const list = ref([] as GalleryItem[])
 
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -48,10 +46,6 @@ onMounted(() => {
     { threshold: 0.1 },
   )
   if (hero.value) observer.observe(hero.value)
-
-  getFeatured((result: GalleryItem[]) => {
-    list.value = result
-  })
 
   // パララックス用スクロールイベント
   window.addEventListener('scroll', handleParallax)
