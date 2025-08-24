@@ -1,6 +1,6 @@
 [
   {
-    "id": 206,
+    "id": 20241026,
     "title": "崩壊スターレイル セーバル",
     "category": "cosplay",
     "location": {
@@ -16,11 +16,10 @@
     "characters": ["セーバル"],
     "cast": [{ "character": "セーバル", "name": "umi", "account": "@uuuuu_mi5" }],
     "photographer": ["藤"],
-    "editor": "藤",
-    "objectPosition": "center top"
+    "editor": "藤"
   },
   {
-    "id": 205,
+    "id": 20240930,
     "title": "崩壊スターレイル カフカ",
     "category": "cosplay",
     "location": {
@@ -40,7 +39,7 @@
     "objectPosition": "center top"
   },
   {
-    "id": 203,
+    "id": 20231223,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -55,7 +54,7 @@
     "editor": "藤"
   },
   {
-    "id": 200,
+    "id": 202312031,
     "title": "PORTRAIT",
     "category": "portrait",
     "location": {
@@ -77,7 +76,7 @@
     "objectPosition": "center bottom"
   },
   {
-    "id": 192,
+    "id": 20231029,
     "title": "VOCALOID",
     "category": "cosplay",
     "location": {
@@ -97,7 +96,7 @@
     "objectPosition": "center bottom"
   },
   {
-    "id": 191,
+    "id": 20231008,
     "title": "プリンセスコネクト!Re:Dive",
     "category": "cosplay",
     "location": {
@@ -116,7 +115,7 @@
     "editor": "藤"
   },
   {
-    "id": 190,
+    "id": 20231001,
     "title": "プリンセスコネクト!Re:Dive",
     "category": "cosplay",
     "location": {
@@ -136,7 +135,7 @@
     "objectPosition": "center top"
   },
   {
-    "id": 189,
+    "id": 202309232,
     "title": "PORTRAIT",
     "category": "portrait",
     "location": {
@@ -152,7 +151,7 @@
     "objectPosition": "center bottom"
   },
   {
-    "id": 188,
+    "id": 202309231,
     "title": "創作COSPLAY",
     "category": "cosplay",
     "location": {
@@ -178,7 +177,7 @@
     "editor": "藤"
   },
   {
-    "id": 187,
+    "id": 20230619,
     "title": "創作COSPLAY",
     "category": "cosplay",
     "location": {
@@ -198,7 +197,7 @@
     "editor": "藤"
   },
   {
-    "id": 180,
+    "id": 20230504,
     "title": "チェンソーマン",
     "category": "cosplay",
     "location": {
@@ -220,7 +219,7 @@
     "editor": "藤"
   },
   {
-    "id": 152,
+    "id": 202002161,
     "title": "ACCA13区監察課",
     "category": "cosplay",
     "location": {
@@ -244,7 +243,7 @@
     "objectPosition": "center bottom"
   },
   {
-    "id": 151,
+    "id": 202002162,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -259,7 +258,7 @@
     "editor": "藤"
   },
   {
-    "id": 150,
+    "id": 20200209,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -274,7 +273,7 @@
     "editor": "藤"
   },
   {
-    "id": 110,
+    "id": 20191208,
     "title": "A3! 向坂椋",
     "category": "cosplay",
     "location": {
@@ -293,7 +292,41 @@
     "editor": "藤"
   },
   {
-    "id": 109,
+    "id": 20191006,
+    "title": "CAFE",
+    "category": "cafe",
+    "location": {
+      "prefecture": "東京都",
+      "name": "池袋 / coffee valley",
+      "type": "outside"
+    },
+    "date": "2019.10.06",
+    "imgDir": "20191006",
+    "imgNumber": 1,
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 20191005,
+    "title": "ズートピア",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "千葉県",
+      "name": "東京ディズニーシー",
+      "type": "outside"
+    },
+    "date": "2019.10.05",
+    "imgDir": "20191005",
+    "imgNumber": 3,
+    "cast": [
+      { "character": "ニック", "name": "sui", "account": "@sui008" },
+      { "character": "ジュディ", "name": "umi", "account": "@uuuuu_mi5" }
+    ],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 20190928,
     "title": "創作COSPLAY",
     "category": "cosplay",
     "location": {
@@ -309,7 +342,7 @@
     "editor": "藤"
   },
   {
-    "id": 108,
+    "id": 20190907,
     "title": "A3! 饅頭拳",
     "category": "cosplay",
     "location": {
@@ -331,7 +364,7 @@
     "editor": "藤"
   },
   {
-    "id": 107,
+    "id": 20190901,
     "title": "A3! Water me!",
     "category": "cosplay",
     "location": {
@@ -360,7 +393,46 @@
     "editor": "藤"
   },
   {
-    "id": 105,
+    "id": 20190727,
+    "title": "ヒプノシスマイク",
+    "category": "cosplay",
+    "location": {
+      "prefecture": "東京都",
+      "name": "Studio Macaron ~Night~",
+      "type": "studio"
+    },
+    "date": "2019.7.27",
+    "imgDir": "20190727",
+    "imgNumber": 4,
+    "work": "ヒプノシスマイク",
+    "costume": "通常",
+    "characters": ["Fling posse"],
+    "cast": [
+      { "character": "飴村乱数", "name": "umi", "account": "@uuuuu_mi5" },
+      { "character": "夢野幻太郎", "name": "藤", "account": "@fujikko_o" },
+      { "character": "有栖川帝統", "name": "sui", "account": "@sui008" }
+    ],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 20190721,
+    "title": "PORTRAIT",
+    "category": "portrait",
+    "location": {
+      "prefecture": "東京都",
+      "name": "国立新美術館",
+      "type": "outside"
+    },
+    "date": "2019.7.21",
+    "imgDir": "20190721",
+    "imgNumber": 5,
+    "cast": [{ "name": "かずさ" }],
+    "photographer": ["藤"],
+    "editor": "藤"
+  },
+  {
+    "id": 20190610,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -376,7 +448,7 @@
     "objectPosition": "center top"
   },
   {
-    "id": 104,
+    "id": 20190608,
     "title": "ACCA13区監察課",
     "category": "cosplay",
     "location": {
@@ -400,7 +472,7 @@
     "objectPosition": "center top"
   },
   {
-    "id": 103,
+    "id": 20190428,
     "title": "VOCALOID 恋は戦争",
     "category": "cosplay",
     "location": {
@@ -430,7 +502,7 @@
     "objectPosition": "center top"
   },
   {
-    "id": 102,
+    "id": 20190304,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -445,7 +517,7 @@
     "editor": "藤"
   },
   {
-    "id": 101,
+    "id": 201811101,
     "title": "PORTRAIT",
     "category": "portrait",
     "location": {
@@ -462,7 +534,7 @@
     "objectPosition": "center bottom"
   },
   {
-    "id": 100,
+    "id": 201811102,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -477,7 +549,7 @@
     "editor": "藤"
   },
   {
-    "id": 99,
+    "id": 201811103,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -493,7 +565,7 @@
     "objectPosition": "center bottom"
   },
   {
-    "id": 98,
+    "id": 20181020,
     "title": "A3! 瑠璃川幸",
     "category": "cosplay",
     "location": {
@@ -512,7 +584,7 @@
     "editor": "藤"
   },
   {
-    "id": 97,
+    "id": 20181014,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -527,7 +599,7 @@
     "editor": "藤"
   },
   {
-    "id": 96,
+    "id": 20181007,
     "title": "A3!秋組+監督",
     "category": "cosplay",
     "location": {
@@ -552,7 +624,7 @@
     "editor": "藤"
   },
   {
-    "id": 95,
+    "id": 201809101,
     "title": "ヒプノシスマイク 観音坂独歩",
     "category": "cosplay",
     "location": {
@@ -571,7 +643,7 @@
     "editor": "藤"
   },
   {
-    "id": 94,
+    "id": 201809102,
     "title": "ヒプノシスマイク 山田二郎",
     "category": "cosplay",
     "location": {
@@ -590,7 +662,7 @@
     "editor": "藤"
   },
   {
-    "id": 93,
+    "id": 20180901,
     "title": "創作COSPLAY",
     "category": "cosplay",
     "location": {
@@ -607,7 +679,7 @@
     "objectPosition": "center top"
   },
   {
-    "id": 92,
+    "id": 20180818,
     "title": "ハッピーシュガーライフ",
     "category": "cosplay",
     "location": {
@@ -629,7 +701,7 @@
     "editor": "藤"
   },
   {
-    "id": 91,
+    "id": 20180815,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -644,7 +716,7 @@
     "editor": "藤"
   },
   {
-    "id": 90,
+    "id": 20180811,
     "title": "A3! 瑠璃川幸",
     "category": "cosplay",
     "location": {
@@ -664,7 +736,7 @@
     "objectPosition": "center bvottom"
   },
   {
-    "id": 89,
+    "id": 20180728,
     "title": "ローゼンメイデン",
     "category": "cosplay",
     "location": {
@@ -686,7 +758,7 @@
     "editor": "藤"
   },
   {
-    "id": 88,
+    "id": 20180721,
     "title": "VOCALOID 秘蜜〜黒の誓い〜",
     "category": "cosplay",
     "location": {
@@ -708,7 +780,7 @@
     "editor": "藤"
   },
   {
-    "id": 87,
+    "id": 201807141,
     "title": "あんさんぶるスターズ！ 月永レオ",
     "category": "cosplay",
     "location": {
@@ -727,7 +799,7 @@
     "editor": "藤"
   },
   {
-    "id": 86,
+    "id": 201807142,
     "title": "あんさんぶるスターズ！ 月永レオ",
     "category": "cosplay",
     "location": {
@@ -746,7 +818,7 @@
     "editor": "藤"
   },
   {
-    "id": 85,
+    "id": 20180630,
     "title": "LANDSCAPE",
     "category": "cosplay",
     "location": {
@@ -761,7 +833,7 @@
     "editor": "藤"
   },
   {
-    "id": 84,
+    "id": 20180526,
     "title": "アイドリッシュセブン ŹOOĻ",
     "category": "cosplay",
     "location": {
@@ -785,7 +857,7 @@
     "editor": "藤"
   },
   {
-    "id": 83,
+    "id": 20180519,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -800,7 +872,7 @@
     "editor": "藤"
   },
   {
-    "id": 82,
+    "id": 20180505,
     "title": "Mickey/Minnie",
     "category": "cosplay",
     "location": {
@@ -822,7 +894,7 @@
     "editor": "藤"
   },
   {
-    "id": 81,
+    "id": 201805041,
     "title": "PORTRAIT",
     "category": "portrait",
     "location": {
@@ -854,7 +926,7 @@
     "editor": "藤"
   },
   {
-    "id": 79,
+    "id": 201805043,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -869,7 +941,7 @@
     "editor": "藤"
   },
   {
-    "id": 78,
+    "id": 20180503,
     "title": "A3! 向坂椋",
     "category": "cosplay",
     "location": {
@@ -888,7 +960,7 @@
     "editor": "藤"
   },
   {
-    "id": 77,
+    "id": 201804211,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -903,7 +975,7 @@
     "editor": "藤"
   },
   {
-    "id": 76,
+    "id": 201804212,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -918,7 +990,7 @@
     "editor": "藤"
   },
   {
-    "id": 75,
+    "id": 201804151,
     "title": "刀剣乱舞 沖田組学パロ",
     "category": "cosplay",
     "location": {
@@ -940,7 +1012,7 @@
     "editor": "藤"
   },
   {
-    "id": 74,
+    "id": 201804152,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -955,7 +1027,7 @@
     "editor": "藤"
   },
   {
-    "id": 73,
+    "id": 20180408,
     "title": "VOCALOID",
     "category": "cosplay",
     "location": {
@@ -981,7 +1053,7 @@
     "editor": "藤"
   },
   {
-    "id": 72,
+    "id": 201803315,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -996,7 +1068,7 @@
     "editor": "藤"
   },
   {
-    "id": 71,
+    "id": 201803311,
     "title": "PORTRAIT",
     "category": "portrait",
     "location": {
@@ -1012,7 +1084,7 @@
     "editor": "藤"
   },
   {
-    "id": 70,
+    "id": 201803312,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -1027,7 +1099,7 @@
     "editor": "藤"
   },
   {
-    "id": 69,
+    "id": 201803313,
     "title": "PORTRAIT",
     "category": "portrait",
     "location": {
@@ -1043,7 +1115,7 @@
     "editor": "藤"
   },
   {
-    "id": 68,
+    "id": 201803314,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -1058,7 +1130,7 @@
     "editor": "藤"
   },
   {
-    "id": 67,
+    "id": 20180330,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -1073,7 +1145,7 @@
     "editor": "藤"
   },
   {
-    "id": 66,
+    "id": 201803181,
     "title": "刀剣乱舞 創作本丸",
     "category": "cosplay",
     "location": {
@@ -1092,7 +1164,7 @@
     "editor": "藤"
   },
   {
-    "id": 65,
+    "id": 20171125,
     "title": "刀剣乱舞 ごはん本丸",
     "category": "cosplay",
     "location": {
@@ -1111,7 +1183,7 @@
     "editor": "藤"
   },
   {
-    "id": 64,
+    "id": 201711181,
     "title": "あんさんぶるスターズ！ 紫之創",
     "category": "cosplay",
     "location": {
@@ -1130,7 +1202,7 @@
     "editor": "藤"
   },
   {
-    "id": 63,
+    "id": 201711182,
     "title": "あんさんぶるスターズ！ 姫宮桃李",
     "category": "cosplay",
     "location": {
@@ -1149,7 +1221,7 @@
     "editor": "藤"
   },
   {
-    "id": 62,
+    "id": 20171021,
     "title": "あんさんぶるスターズ！ 姫宮桃李",
     "category": "cosplay",
     "location": {
@@ -1168,7 +1240,7 @@
     "editor": "藤"
   },
   {
-    "id": 61,
+    "id": 20170930,
     "title": "多重人格探偵サイコ 西園弖虎",
     "category": "cosplay",
     "location": {
@@ -1187,7 +1259,7 @@
     "editor": "藤"
   },
   {
-    "id": 60,
+    "id": 20170923,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -1202,7 +1274,7 @@
     "editor": "藤"
   },
   {
-    "id": 59,
+    "id": 20170922,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -1217,7 +1289,7 @@
     "editor": "藤"
   },
   {
-    "id": 58,
+    "id": 20170917,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -1232,7 +1304,7 @@
     "editor": "藤"
   },
   {
-    "id": 57,
+    "id": 20170916,
     "title": "A3! 椋幸",
     "category": "cosplay",
     "location": {
@@ -1254,7 +1326,7 @@
     "editor": "藤"
   },
   {
-    "id": 56,
+    "id": 201708271,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -1269,7 +1341,7 @@
     "editor": "藤"
   },
   {
-    "id": 55,
+    "id": 201708272,
     "title": "VOCALOID 千本桜",
     "category": "cosplay",
     "location": {
@@ -1288,7 +1360,7 @@
     "editor": "藤"
   },
   {
-    "id": 54,
+    "id": 20170826,
     "title": "JOJO × 天女",
     "category": "cosplay",
     "location": {
@@ -1307,7 +1379,7 @@
     "editor": "藤"
   },
   {
-    "id": 53,
+    "id": 20170819,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -1322,7 +1394,7 @@
     "editor": "藤"
   },
   {
-    "id": 52,
+    "id": 20170815,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -1337,7 +1409,7 @@
     "editor": "藤"
   },
   {
-    "id": 51,
+    "id": 201708152,
     "title": "LANDSCAPE",
     "category": "landscape",
     "location": {
@@ -1352,7 +1424,7 @@
     "editor": "藤"
   },
   {
-    "id": 50,
+    "id": 20170730,
     "title": "CAFE",
     "category": "cafe",
     "location": {
@@ -1367,7 +1439,7 @@
     "editor": "藤"
   },
   {
-    "id": 15,
+    "id": 20160814,
     "title": "JOJO × アルビノ",
     "category": "cosplay",
     "location": {
