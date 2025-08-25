@@ -10,6 +10,14 @@ const routes: Array<RouteRecordRaw> = [
     },
   },
   {
+    path: '/about',
+    name: 'about',
+    component: () => import('@/pages/PFAbout.vue'),
+    meta: {
+      mode: 'light',
+    },
+  },
+  {
     path: '/gallery',
     name: 'gallery',
     component: () => import('@/pages/PFGallery.vue'),

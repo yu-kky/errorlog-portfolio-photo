@@ -4,7 +4,6 @@ import { getStorage, ref as sRef, listAll, getDownloadURL } from 'firebase/stora
 
 const props = withDefaults(
   defineProps<{
-    /** Storage 上のフォルダパス（末尾スラッシュ推奨） */
     path?: string
     auto?: boolean
     interval?: number
@@ -43,7 +42,9 @@ const stop = () => {
   }
 }
 
-// 画像の事前読み込み（ふわっと切替を滑らかに）
+/**
+ * 画像の事前読み込み
+ */
 const preload = (src: string) =>
   new Promise<void>((resolve) => {
     const img = new Image()
@@ -52,24 +53,27 @@ const preload = (src: string) =>
     img.src = src
   })
 
+/**
+ * カルーセル画像一覧の取得と並び替え
+ */
 onMounted(async () => {
   const storage = getStorage()
   const listRef = sRef(storage, props.path)
   const res = await listAll(listRef)
 
-  const sorted = [...res.items].sort((a, b) =>
-    a.name.localeCompare(b.name, 'en', { numeric: true, sensitivity: 'base' }),
-  )
+  const sorted = [...res.items].sort((a, b) => {
+    const dateA = Number(a.name.replace('.jpg', ''))
+    const dateB = Number(b.name.replace('.jpg', ''))
+    return dateB - dateA // 降順
+  })
 
   const fetched = await Promise.all(sorted.map((ref) => getDownloadURL(ref)))
 
-  // 先に少しプリロード（全件でもOK：枚数6なら誤差）
   await Promise.all(fetched.map(preload))
 
   urls.value = fetched
 })
 
-// 画像数の変化に応じてインデックス補正＆オート開始
 watch(
   () => urls.value.length,
   (len) => {
@@ -84,7 +88,6 @@ watch(
   { immediate: true },
 )
 
-// auto の切り替えに追従
 watch(
   () => props.auto,
   (v) => (v ? start() : stop()),
@@ -92,7 +95,6 @@ watch(
 
 onBeforeUnmount(stop)
 
-// --- swipe 操作（既存そのまま） ---
 let downX = 0,
   downY = 0,
   dragging = false

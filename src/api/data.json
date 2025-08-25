@@ -15,8 +15,8 @@
     "costume": "通常",
     "characters": ["セーバル"],
     "cast": [{ "character": "セーバル", "name": "umi", "account": "@uuuuu_mi5" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20240930,
@@ -34,8 +34,8 @@
     "costume": "通常",
     "characters": ["カフカ"],
     "cast": [{ "character": "カフカ", "name": "umi", "account": "@uuuuu_mi5" }],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center top"
   },
   {
@@ -50,8 +50,8 @@
     "date": "2023.12.23",
     "imgDir": "20231223",
     "imgNumber": 6,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 202312031,
@@ -71,8 +71,8 @@
         "account": "@hamidasuonigiri"
       }
     ],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center bottom"
   },
   {
@@ -91,8 +91,8 @@
     "costume": "通常",
     "characters": ["初音ミク"],
     "cast": [{ "character": "初音ミク", "name": "かるた", "account": "@0krt01" }],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center bottom"
   },
   {
@@ -111,8 +111,8 @@
     "costume": "通常",
     "characters": ["ツムギ"],
     "cast": [{ "character": "ツムギ", "name": "かるた", "account": "@0krt01" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20231001,
@@ -130,8 +130,8 @@
     "costume": "通常",
     "characters": ["ツムギ"],
     "cast": [{ "character": "ツムギ", "name": "かるた", "account": "@0krt01" }],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center top"
   },
   {
@@ -146,8 +146,8 @@
     "date": "2023.9.23",
     "imgDir": "20230923_2",
     "imgNumber": 11,
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center bottom"
   },
   {
@@ -173,8 +173,8 @@
       },
       { "character": "メイド", "name": "かるた", "account": "@0krt01" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20230619,
@@ -193,8 +193,8 @@
       { "character": "青メッシュ", "name": "かるた", "account": "@0krt01" },
       { "character": "マスク", "name": "umi", "account": "@uuuuu_mi5" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20230504,
@@ -215,8 +215,8 @@
       { "character": "マキマ", "name": "umi", "account": "@uuuuu_mi5" },
       { "character": "パワー", "name": "かるた", "account": "@0krt01" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 202002161,
@@ -238,8 +238,8 @@
       { "character": "ロッタ", "name": "umi", "account": "@uuuuu_mi5" },
       { "character": "ニーノ", "name": "藤", "account": "@fujikko_o" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center bottom"
   },
   {
@@ -254,8 +254,8 @@
     "date": "2020.2.16",
     "imgDir": "20200216_2",
     "imgNumber": 3,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20200209,
@@ -269,8 +269,8 @@
     "date": "2020.2.9",
     "imgDir": "20200209",
     "imgNumber": 9,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20191208,
@@ -288,8 +288,8 @@
     "costume": "聖フローラ中学制服",
     "characters": ["向坂椋"],
     "cast": [{ "character": "向坂椋", "name": "らきむ" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20191006,
@@ -303,8 +303,8 @@
     "date": "2019.10.06",
     "imgDir": "20191006",
     "imgNumber": 1,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20191005,
@@ -322,8 +322,8 @@
       { "character": "ニック", "name": "sui", "account": "@sui008" },
       { "character": "ジュディ", "name": "umi", "account": "@uuuuu_mi5" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20190928,
@@ -338,8 +338,8 @@
     "imgDir": "20190928",
     "imgNumber": 4,
     "cast": [{ "name": "にぎりやま はこ", "account": "@hamidasuonigiri" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20190907,
@@ -355,13 +355,13 @@
     "imgNumber": 3,
     "work": "A3!",
     "costume": "秋組第五回公演『燃えよ饅頭拳！』衣装",
-    "characters": ["赤龍(兵藤十座)", "シン(攝津万里)"],
+    "characters": ["赤龍(兵えいす十座)", "シン(攝津万里)"],
     "cast": [
-      { "character": "赤龍(兵藤十座)", "name": "藤", "account": "@fujikko_o" },
+      { "character": "赤龍(兵えいす十座)", "name": "藤", "account": "@fujikko_o" },
       { "character": "シン(攝津万里)", "name": "sui", "account": "@sui008" }
     ],
-    "photographer": ["藤", "umi"],
-    "editor": "藤"
+    "photographer": ["えいす", "umi"],
+    "editor": "えいす"
   },
   {
     "id": 20190901,
@@ -389,8 +389,8 @@
       { "character": "アラジン(三好一成)", "name": "かるた", "account": "@0krt01" },
       { "character": "ランプの魔人(斑鳩三角)", "name": "藤", "account": "@fujikko_o" }
     ],
-    "photographer": ["藤", "umi"],
-    "editor": "藤"
+    "photographer": ["えいす", "umi"],
+    "editor": "えいす"
   },
   {
     "id": 20190727,
@@ -412,8 +412,8 @@
       { "character": "夢野幻太郎", "name": "藤", "account": "@fujikko_o" },
       { "character": "有栖川帝統", "name": "sui", "account": "@sui008" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20190721,
@@ -428,8 +428,8 @@
     "imgDir": "20190721",
     "imgNumber": 5,
     "cast": [{ "name": "かずさ" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20190615,
@@ -451,8 +451,8 @@
       { "character": "泉田莇", "name": "由良", "account": "@cos_yura" },
       { "character": "槙田一朗", "name": "Anz", "account": "@Anz0528" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20190610,
@@ -466,8 +466,8 @@
     "date": "2019.6.10",
     "imgDir": "20190610",
     "imgNumber": 3,
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center top"
   },
   {
@@ -490,8 +490,8 @@
       { "character": "ロッタ", "name": "umi", "account": "@uuuuu_mi5" },
       { "character": "ニーノ", "name": "藤", "account": "@fujikko_o" }
     ],
-    "photographer": ["藤", "umi", "sui"],
-    "editor": "藤",
+    "photographer": ["えいす", "umi", "sui"],
+    "editor": "えいす",
     "objectPosition": "center top"
   },
   {
@@ -520,8 +520,8 @@
       },
       { "character": "巡音ルカ", "name": "umi", "account": "@uuuuu_mi5" }
     ],
-    "photographer": ["藤", "umi", "(1枚目)イベント撮影スタッフ"],
-    "editor": "藤",
+    "photographer": ["えいす", "umi", "(1枚目)イベント撮影スタッフ"],
+    "editor": "えいす",
     "objectPosition": "center top"
   },
   {
@@ -536,8 +536,8 @@
     "date": "2019.3.4",
     "imgDir": "20190304",
     "imgNumber": 2,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201811101,
@@ -552,8 +552,8 @@
     "imgDir": "20181110_1",
     "imgNumber": 7,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center bottom"
   },
   {
@@ -568,8 +568,8 @@
     "date": "2018.11.10",
     "imgDir": "20181110_2",
     "imgNumber": 4,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201811103,
@@ -583,8 +583,8 @@
     "date": "2018.11.10",
     "imgDir": "20181110_3",
     "imgNumber": 3,
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center bottom"
   },
   {
@@ -603,8 +603,8 @@
     "costume": "聖フローラ中学制服",
     "characters": ["瑠璃川幸"],
     "cast": [{ "character": "瑠璃川幸", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20181014,
@@ -618,8 +618,8 @@
     "date": "2018.10.14",
     "imgDir": "20181014",
     "imgNumber": 2,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20181007,
@@ -643,8 +643,8 @@
       { "character": "七尾太一", "name": "千歳", "account": "@765chitose961" },
       { "character": "古市左京", "name": "月瀬骨牌", "account": "@tknskrt623" }
     ],
-    "photographer": ["藤", "umi"],
-    "editor": "藤"
+    "photographer": ["えいす", "umi"],
+    "editor": "えいす"
   },
   {
     "id": 201809101,
@@ -662,8 +662,8 @@
     "costume": "通常",
     "characters": ["観音坂独歩 a.k.a. DOPPO"],
     "cast": [{ "character": "観音坂独歩", "name": "さつと", "account": "@satsuto304gch" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201809102,
@@ -681,8 +681,8 @@
     "costume": "通常",
     "characters": ["山田二郎 a.k.a. MC.M.B"],
     "cast": [{ "character": "山田二郎", "name": "さつと", "account": "@satsuto304gch" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180901,
@@ -697,8 +697,8 @@
     "imgDir": "20180901",
     "imgNumber": 3,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center top"
   },
   {
@@ -720,8 +720,8 @@
       { "character": "松坂さとう", "name": "月瀬骨牌", "account": "@tknskrt623" },
       { "character": "神戸しお", "name": "にぎりやま はこ", "account": "@hamidasuonigiri" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180815,
@@ -735,8 +735,8 @@
     "date": "2018.8.15",
     "imgDir": "20180815",
     "imgNumber": 5,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180811,
@@ -754,8 +754,8 @@
     "costume": "聖フローラ中学制服",
     "characters": ["瑠璃川幸"],
     "cast": [{ "character": "瑠璃川幸", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤",
+    "photographer": ["えいす"],
+    "editor": "えいす",
     "objectPosition": "center bvottom"
   },
   {
@@ -777,8 +777,8 @@
       { "character": "真紅", "name": "さつと", "account": "@satsuto304gch" },
       { "character": "翠星石", "name": "天", "account": "@sola_la112" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180721,
@@ -799,8 +799,8 @@
       { "character": "初音ミク", "name": "umi", "account": "@uuuuu_mi5" },
       { "character": "鏡音レン", "name": "sui", "account": "@sui008" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201807141,
@@ -818,8 +818,8 @@
     "costume": "knightsユニット衣装",
     "characters": ["月永レオ"],
     "cast": [{ "character": "月永レオ", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201807142,
@@ -837,8 +837,8 @@
     "costume": "ワンダーランドシリーズ",
     "characters": ["月永レオ"],
     "cast": [{ "character": "月永レオ", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180630,
@@ -852,8 +852,8 @@
     "date": "2018.6.30",
     "imgDir": "20180630",
     "imgNumber": 8,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180526,
@@ -876,8 +876,8 @@
       { "character": "棗 巳波", "name": "るんるん", "account": "@runruntatsuharu" },
       { "character": "月倉蒼", "name": "御堂 虎於", "account": "@0oaoi" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180519,
@@ -891,8 +891,8 @@
     "date": "2018.5.19",
     "imgDir": "20180519",
     "imgNumber": 6,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180505,
@@ -913,8 +913,8 @@
       { "character": "Mickey", "name": "sui", "account": "@sui008" },
       { "character": "Minnie", "name": "umi", "account": "@uuuuu_mi5" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201805041,
@@ -929,8 +929,8 @@
     "imgDir": "20180504_1",
     "imgNumber": 7,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 80,
@@ -945,8 +945,8 @@
     "imgDir": "20180504_2",
     "imgNumber": 4,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201805043,
@@ -960,8 +960,8 @@
     "date": "2018.5.4",
     "imgDir": "20180504_3",
     "imgNumber": 5,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180503,
@@ -979,8 +979,8 @@
     "costume": "聖フローラ中学制服",
     "characters": ["向坂椋"],
     "cast": [{ "character": "向坂椋", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201804211,
@@ -994,8 +994,8 @@
     "date": "2018.4.21",
     "imgDir": "20180421_1",
     "imgNumber": 2,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201804212,
@@ -1009,8 +1009,8 @@
     "date": "2018.4.21",
     "imgDir": "20180421_2",
     "imgNumber": 1,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201804151,
@@ -1031,8 +1031,8 @@
       { "character": "加州清光", "name": "黒薔薇", "account": "@ha1030tkn" },
       { "character": "大和守安定", "name": "ドリア", "account": "@torippi0" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201804152,
@@ -1046,8 +1046,8 @@
     "date": "2018.4.15",
     "imgDir": "20180415_2",
     "imgNumber": 4,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180408,
@@ -1072,8 +1072,8 @@
       { "character": "KAITO", "name": "MAKINO", "account": "@nicemountainM" },
       { "character": "MEIKO", "name": "上田モコ", "account": "@ueda0111" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201803315,
@@ -1087,8 +1087,8 @@
     "date": "2018.3.31",
     "imgDir": "20180331_5",
     "imgNumber": 2,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201803311,
@@ -1103,8 +1103,8 @@
     "imgDir": "20180331_1",
     "imgNumber": 6,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201803312,
@@ -1118,8 +1118,8 @@
     "date": "2018.3.31",
     "imgDir": "20180331_2",
     "imgNumber": 9,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201803313,
@@ -1134,8 +1134,8 @@
     "imgDir": "20180331_3",
     "imgNumber": 5,
     "cast": [{ "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201803314,
@@ -1149,8 +1149,8 @@
     "date": "2018.3.31",
     "imgDir": "20180331_4",
     "imgNumber": 4,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20180330,
@@ -1164,8 +1164,8 @@
     "date": "2018.3.30",
     "imgDir": "20180330",
     "imgNumber": 5,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201803181,
@@ -1183,8 +1183,8 @@
     "costume": "通常",
     "characters": ["審神者 + 創作本丸メンバー"],
     "cast": [{ "character": "主催/審神者", "name": "黒薔薇", "account": "@ha1030tkn" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20171125,
@@ -1202,8 +1202,8 @@
     "costume": "内番",
     "characters": ["創作本丸メンバー"],
     "cast": [{ "character": "今剣", "name": "榊ユト", "account": "@yutosakaki" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201711181,
@@ -1221,8 +1221,8 @@
     "costume": "迷いアリス",
     "characters": ["紫之創"],
     "cast": [{ "character": "紫之創", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201711182,
@@ -1240,8 +1240,8 @@
     "costume": "ドリームユニコーン",
     "characters": ["姫宮桃李"],
     "cast": [{ "character": "姫宮桃李", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20171021,
@@ -1259,8 +1259,8 @@
     "costume": "ドリームユニコーン",
     "characters": ["姫宮桃李"],
     "cast": [{ "character": "姫宮桃李", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170930,
@@ -1278,8 +1278,8 @@
     "costume": "作中衣装",
     "characters": ["西園弖虎"],
     "cast": [{ "character": "西園弖虎", "name": "さつと", "account": "@satsuto304gch" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170923,
@@ -1293,8 +1293,8 @@
     "date": "2017.9.23",
     "imgDir": "20170923",
     "imgNumber": 4,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170922,
@@ -1308,8 +1308,8 @@
     "date": "2017.9.22",
     "imgDir": "20170922",
     "imgNumber": 7,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170917,
@@ -1323,8 +1323,8 @@
     "date": "2017.9.17",
     "imgDir": "20170917",
     "imgNumber": 5,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170916,
@@ -1345,8 +1345,8 @@
       { "character": "向坂椋", "name": "かるた", "account": "@0krt01" },
       { "character": "瑠璃川幸", "name": "にぎりやま はこ", "account": "@hamidasuonigiri" }
     ],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201708271,
@@ -1360,8 +1360,8 @@
     "date": "2017.8.27",
     "imgDir": "20170827_1",
     "imgNumber": 1,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201708272,
@@ -1379,8 +1379,8 @@
     "costume": "千本桜",
     "characters": ["初音ミク"],
     "cast": [{ "character": "初音ミク", "name": "天", "account": "@sola_la112" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170826,
@@ -1398,8 +1398,8 @@
     "costume": "創作天女",
     "characters": ["ジョルノ・ジョヴァーナ"],
     "cast": [{ "character": "ジョルノ・ジョヴァーナ", "name": "さき", "account": "@mimimisakidg" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170819,
@@ -1413,8 +1413,8 @@
     "date": "2017.8.19",
     "imgDir": "20170819",
     "imgNumber": 5,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170815,
@@ -1428,8 +1428,8 @@
     "date": "2017.8.15",
     "imgDir": "20170815",
     "imgNumber": 6,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201708152,
@@ -1443,8 +1443,8 @@
     "date": "2017.8.15",
     "imgDir": "20170815_2",
     "imgNumber": 3,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201708142,
@@ -1462,8 +1462,8 @@
     "costume": "真冬のときめきホワイトニット",
     "characters": ["一ノ瀬志希"],
     "cast": [{ "character": "一ノ瀬志希", "name": "要" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 201708141,
@@ -1481,8 +1481,8 @@
     "costume": "通常",
     "characters": ["毘沙門"],
     "cast": [{ "character": "毘沙門", "name": "要" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170730,
@@ -1496,8 +1496,8 @@
     "date": "2017.7.30",
     "imgDir": "20170730",
     "imgNumber": 10,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20170729,
@@ -1511,8 +1511,8 @@
     "date": "2017.7.29",
     "imgDir": "20170729",
     "imgNumber": 2,
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   },
   {
     "id": 20160814,
@@ -1530,7 +1530,7 @@
     "costume": "創作アルビノ",
     "characters": ["ジョルノ・ジョヴァーナ"],
     "cast": [{ "character": "ジョルノ・ジョヴァーナ", "name": "さき", "account": "@mimimisakidg" }],
-    "photographer": ["藤"],
-    "editor": "藤"
+    "photographer": ["えいす"],
+    "editor": "えいす"
   }
 ]
