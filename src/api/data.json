@@ -219,6 +219,25 @@
     "editor": "えいす"
   },
   {
+    "id": 20230318,
+    "title": "PORTRAIT",
+    "category": "portrait",
+    "location": {
+      "prefecture": "東京都",
+      "name": "下北沢",
+      "type": "outside"
+    },
+    "date": "2023.3.18",
+    "imgDir": "20230318",
+    "imgNumber": 4,
+    "cast": [
+      { "name": "かるた", "account": "@0krt01" },
+      { "name": "にぎりやま はこ", "account": "@hamidasuonigiri" }
+    ],
+    "photographer": ["えいす"],
+    "editor": "えいす"
+  },
+  {
     "id": 202002161,
     "title": "ACCA13区監察課",
     "category": "cosplay",
