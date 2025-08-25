@@ -12,7 +12,10 @@
       デザイナー不在の案件で、デザイン〜実装まで一貫対応した経験も多数あります。
     </p>
     <ul>
-      <li><strong>得意領域：</strong> レガシー刷新、0→1構築、UI実装品質の底上げ</li>
+      <li>
+        <strong>得意領域：</strong>
+        レガシーサービスのリプレイス、0→1構築、メンテナブルなcomponent設計
+      </li>
       <li>
         <strong>主要スタック：</strong> Vue / React / TypeScript / Java / Scala / Firebase / GCP
       </li>
@@ -118,6 +121,8 @@
   max-width: 720px;
   margin: 0 auto 2rem;
   padding: 70px 0 100px;
+  font-size: 0.8rem;
+  letter-spacing: 0.04rem;
 
   h2 {
     font-family: 'Poppins', sans-serif;
@@ -127,7 +132,7 @@
   h3 {
     font-family: 'Poppins', sans-serif;
     letter-spacing: 0;
-    margin: 1.5rem 0 1rem 0;
+    margin: 2rem 0 1rem 0;
     span {
       font-size: 0.8rem;
       opacity: 0.7;
@@ -139,40 +144,47 @@
     margin: 1.5rem 0 1rem 0;
   }
 
-  p {
-    font-size: 0.8rem;
+  ul {
+    margin: 0.5rem 0 1.25rem;
+    padding-left: 1.2rem;
+
+    li {
+      padding-bottom: 3px;
+    }
   }
-}
-ul {
-  margin: 0.5rem 0 1.25rem;
-  padding-left: 1.2rem;
-  font-size: 0.8rem;
-}
-.cta-row {
-  display: flex;
-  gap: 0.75rem;
-  margin: 1rem 0 2rem;
-  flex-wrap: wrap;
-}
-.btn {
-  padding: 0.6rem 1rem;
-  border: 1px solid currentColor;
-  border-radius: 0.5rem;
-  text-decoration: none;
-}
-.btn.primary {
-  border: none;
-}
-.contact-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.75rem;
-}
-.card {
-  display: block;
-  padding: 0.9rem 1rem;
-  border: 1px solid currentColor;
-  border-radius: 0.6rem;
-  text-decoration: none;
+  u {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1.2px;
+    text-decoration-skip-ink: auto;
+    text-decoration-color: rgba(0, 0, 0, 0.55);
+  }
+
+  a {
+    color: var(--accent, #6166dc);
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition:
+      color 0.2s ease,
+      text-decoration-thickness 0.15s ease;
+
+    &:hover {
+      text-decoration-thickness: 2px;
+    }
+    &:focus-visible {
+      outline: 2px solid var(--accent, #6166dc);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    &[href^='http']::after {
+      content: '↗';
+      font-size: 0.85em;
+      margin-left: 0.25em;
+    }
+    &:visited {
+      color: #565bb8;
+    }
+  }
 }
 </style>
