@@ -101,11 +101,23 @@ watch([page, list, isScrollable], ([p, l, s]) => {
 </template>
 
 <style scoped lang="scss">
-@use '@/assets/style/global' as *;
+@use '@/assets/style/global' as vp;
 
 .gallery-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: 1fr;
+  padding-inline: 9%;
+
+  @include vp.up(md) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    padding-inline: 8%;
+  }
+
+  @include vp.up(lg) {
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: 24px;
+  }
+
   gap: 24px;
 }
 
@@ -125,8 +137,5 @@ watch([page, list, isScrollable], ([p, l, s]) => {
 .category-wrapper {
   max-width: 920px;
   padding-bottom: 40px;
-  @include max-tablet {
-    width: 100%;
-  }
 }
 </style>

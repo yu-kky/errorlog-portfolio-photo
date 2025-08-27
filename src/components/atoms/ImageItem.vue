@@ -41,7 +41,8 @@ const onImageLoad = (e: Event) => {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@use '@/assets/style/global' as vp;
 img {
   width: 100%;
   height: 100%;
@@ -59,7 +60,10 @@ img {
   justify-content: center;
 
   img {
-    width: 450px;
+    width: 100%;
+    @include vp.up(md) {
+      width: 450px;
+    }
   }
 }
 </style>

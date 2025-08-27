@@ -12,11 +12,24 @@ import GalleryList from '@/components/molecules/GalleryList.vue'
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/style/global' as vp;
+
 .gallery-heading {
   max-width: 920px;
   margin: 0 auto 2rem;
-  padding: 70px 0 0;
   font-family: 'Poppins', sans-serif;
+
+  padding-top: 110px;
+  padding-inline: 9%;
+  @include vp.up(md) {
+    padding-top: 90px;
+    padding-inline: 8%;
+  }
+
+  @include vp.up(lg) {
+    padding-top: 70px;
+    padding-inline: 24px;
+  }
 
   span {
     font-size: 1rem;

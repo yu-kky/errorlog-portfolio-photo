@@ -1,30 +1,41 @@
-$pc: 1500px;
-$tablet_over: 1281px;
-$tablet: 1280px;
-$sp_over: 961px;
-$sp: 960px;
-@mixin min-pc {
-  @media (min-width: ($pc)) {
+@use 'sass:map';
+
+// 可読性の高い5段階（SP / Tablet / 小PC / 大PC / ワイド）
+$breakpoints: (
+  sp: 0px,
+  // 〜767
+  md: 768px,
+  // 768〜1023 … Tablet
+  lg: 1024px,
+  // 1024〜1279 … 小PC
+  xl: 1280px,
+  // 1280〜1535 … 大PC
+  xxl: 1536px, // 1536〜      … ワイド以上
+) !default;
+
+// 取り出し用ヘルパー
+@function bp($key) {
+  @return map.get($breakpoints, $key);
+}
+
+// メディアクエリ用ミックスイン
+@mixin up($key) {
+  @media (min-width: bp($key)) {
     @content;
   }
 }
-@mixin min-tablet {
-  @media (min-width: ($tablet_over)) {
+
+@mixin down($key) {
+  $v: calc(bp($key) - 1px);
+  @media (max-width: $v) {
     @content;
   }
 }
-@mixin max-tablet {
-  @media (max-width: ($tablet)) {
-    @content;
-  }
-}
-@mixin min-sp {
-  @media (min-width: ($sp_over)) {
-    @content;
-  }
-}
-@mixin max-sp {
-  @media (max-width: ($sp)) {
+
+@mixin between($minKey, $maxKey) {
+  $min: bp($minKey);
+  $max: calc(bp($maxKey) - 1px);
+  @media (min-width: $min) and (max-width: $max) {
     @content;
   }
 }

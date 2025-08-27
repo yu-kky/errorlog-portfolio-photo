@@ -105,7 +105,7 @@ const generateDescription = (item: GalleryItem) => {
 </script>
 
 <style scoped lang="scss">
-@use '@/assets/style/global' as *;
+@use '@/assets/style/global' as vp;
 
 .gallery-detail {
   display: flex;
@@ -114,6 +114,14 @@ const generateDescription = (item: GalleryItem) => {
 
   padding-top: 100px;
   padding-bottom: 40px;
+
+  padding-inline: 9%;
+  @include vp.up(md) {
+    padding-inline: 8%;
+  }
+  @include vp.up(lg) {
+    padding-inline: 0;
+  }
 
   .gallery {
     max-width: 800px;
@@ -127,7 +135,7 @@ const generateDescription = (item: GalleryItem) => {
 
       & > span {
         font-size: 0.7rem;
-        color: $gray;
+        color: vp.$gray;
       }
 
       &.description {

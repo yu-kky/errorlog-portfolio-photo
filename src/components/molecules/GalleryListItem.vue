@@ -34,9 +34,6 @@ defineProps<{
     font-size: 0.87rem;
     line-height: 1rem;
     font-weight: lighter;
-    @include max-sp {
-      font-size: 0.8rem;
-    }
   }
 
   & > span {

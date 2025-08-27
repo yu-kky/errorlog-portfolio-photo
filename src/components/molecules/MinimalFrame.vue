@@ -39,6 +39,7 @@ const mode = props.mode
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/style/global' as vp;
 @keyframes scrollBounce {
   0%,
   100% {
@@ -117,10 +118,24 @@ const mode = props.mode
   transform: translateY(-50%);
 
   &.edge-left {
-    left: var(--edge-gap, 3rem);
+    left: var(--edge-gap, 3%);
+
+    @include vp.up(md) {
+      left: var(--edge-gap, 3%);
+    }
+    @include vp.up(lg) {
+      left: var(--edge-gap, 3rem);
+    }
   }
   &.edge-right {
-    right: var(--edge-gap, 3rem);
+    right: var(--edge-gap, 3%);
+
+    @include vp.up(md) {
+      right: var(--edge-gap, 3%);
+    }
+    @include vp.up(lg) {
+      right: var(--edge-gap, 3rem);
+    }
   }
 }
 .typo-vertical {
@@ -129,9 +144,13 @@ const mode = props.mode
   white-space: nowrap;
   line-height: 1;
   font-size: 1rem;
-  letter-spacing: 1.2rem;
   font-weight: 600;
   font-family: 'Poppins', sans-serif;
+
+  letter-spacing: 0.7rem;
+  @include vp.up(md) {
+    letter-spacing: 1.2rem;
+  }
 }
 .edge-bottom {
   position: absolute;
