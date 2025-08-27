@@ -57,7 +57,7 @@
     </ul>
 
     <p>
-      x：
+      x(連絡用アカウント)：
       <a href="https://x.com/errorlog_ace" target="_blank" rel="noopener noreferrer"
         >えいす/ERRORLOG @errorlog_ace</a
       ><br />
@@ -109,12 +109,14 @@
     </ul>
     <p>
       掲載NGやクレジット表記の方法、商用利用のご相談など、個別のご希望があればできる限り対応します。<br />
-      <router-link to="/contact?context=photo">撮影に関するお問い合わせはこちら</router-link>
     </p>
+    <DmLink />
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import DmLink from '@/components/atoms/DmLink.vue'
+</script>
 
 <style scoped lang="scss">
 .column-container {

@@ -10,7 +10,6 @@
           <ul>
             <li><RouterLink to="/about">ABOUT</RouterLink></li>
             <li><RouterLink to="/gallery">GALLERY</RouterLink></li>
-            <li><RouterLink to="/contact">CONTACT</RouterLink></li>
           </ul>
         </nav>
       </div>
