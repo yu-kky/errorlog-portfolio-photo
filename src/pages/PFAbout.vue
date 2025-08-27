@@ -119,12 +119,25 @@ import DmLink from '@/components/atoms/DmLink.vue'
 </script>
 
 <style scoped lang="scss">
+@use '@/assets/style/global' as vp;
+
 .column-container {
   max-width: 720px;
   margin: 0 auto 2rem;
-  padding: 70px 0 100px;
   font-size: 0.8rem;
   letter-spacing: 0.04rem;
+
+  padding-bottom: 100px;
+  padding-top: 110px;
+  padding-inline: 9%;
+  @include vp.up(md) {
+    padding-top: 90px;
+    padding-inline: 5%;
+  }
+  @include vp.up(lg) {
+    padding-top: 70px;
+    padding-inline: 0;
+  }
 
   h2 {
     font-family: 'Poppins', sans-serif;

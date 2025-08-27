@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="snap">
+  <div class="top-container">
     <!-- ファーストビュー -->
     <section class="hero" ref="hero">
       <div class="hero-bg" ref="heroBg"></div>
@@ -76,16 +76,20 @@ function handleParallax() {
 }
 </script>
 <style scoped lang="scss">
-.snap {
+@use '@/assets/style/global' as vp;
+.top-container {
   height: 100%;
   scroll-snap-type: y mandatory;
-  overflow-y: auto;
+  overflow: hidden;
+  padding-bottom: 100px;
 }
 
 /* ファーストビュー */
 .hero {
   position: relative;
   height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -119,7 +123,20 @@ function handleParallax() {
   padding: 3rem;
 
   h1 {
-    font-size: 10rem;
+    font-size: 6rem;
+    line-height: 8rem;
+    @include vp.up(md) {
+      font-size: 8rem;
+      line-height: 10rem;
+    }
+    @include vp.up(lg) {
+      font-size: 10rem;
+      line-height: 12rem;
+    }
+    @include vp.up(xl) {
+      font-size: 12rem;
+      line-height: 13rem;
+    }
     color: #27262420;
     font-family: 'Poppins', sans-serif;
     -webkit-text-stroke: 1px #fff;
@@ -132,6 +149,8 @@ function handleParallax() {
 }
 .carousel-wrapper {
   height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,6 +169,16 @@ function handleParallax() {
 .gallery-more {
   text-align: right;
   margin-top: -20px;
+
+  margin-right: 9%;
+  @include vp.up(md) {
+    margin-right: 8%;
+  }
+
+  @include vp.up(lg) {
+    margin-right: 24px;
+  }
+
   a {
     display: inline-block;
     border: 1.5px solid #272624;
@@ -157,6 +186,12 @@ function handleParallax() {
     font-size: 0.8rem;
     text-decoration: none;
     color: #272624;
+  }
+}
+
+@include vp.down(md) {
+  .top-container {
+    scroll-snap-type: none;
   }
 }
 </style>

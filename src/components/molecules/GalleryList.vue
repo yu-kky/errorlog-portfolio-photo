@@ -83,7 +83,7 @@ watch([page, list, isScrollable], ([p, l, s]) => {
 </script>
 
 <template>
-  <div v-if="list.length" class="category-wrapper">
+  <div v-if="list.length" class="category-wrapper" :class="{ preview: props.isPreview }">
     <div class="gallery-list">
       <div v-for="item in list" :key="item.id">
         <GalleryListItem :item="item" />
@@ -137,5 +137,14 @@ watch([page, list, isScrollable], ([p, l, s]) => {
 .category-wrapper {
   max-width: 920px;
   padding-bottom: 40px;
+
+  &.preview {
+    .gallery-list {
+      @include vp.down(md) {
+        height: auto;
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+  }
 }
 </style>
