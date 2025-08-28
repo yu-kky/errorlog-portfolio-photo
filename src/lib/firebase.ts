@@ -9,10 +9,8 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
 }
 
-// Firebase アプリ初期化（初回のみ）
 const firebaseApp = initializeApp(firebaseConfig)
 
-// 使いたい機能だけ export（今は Storage）
 const storage = getStorage(firebaseApp)
 
 export { storage }

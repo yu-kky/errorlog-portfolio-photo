@@ -37,10 +37,9 @@ const fetchNextGallery = () => {
   })
 }
 
-/** IntersectionObserver 設定 */
 const setupObserver = () => {
   if (observer) observer.disconnect()
-  if (props.isPreview) return // プレビューでは無効化
+  if (props.isPreview) return
 
   observer = new IntersectionObserver(
     (entries) => {
@@ -50,8 +49,8 @@ const setupObserver = () => {
       }
     },
     {
-      root: null, // viewport
-      rootMargin: '100% 0px', // 600px手前で先読み
+      root: null,
+      rootMargin: '100% 0px',
       threshold: 0,
     },
   )
@@ -62,7 +61,7 @@ onMounted(() => {
   if (props.isPreview) {
     getLatestGallery()
   } else {
-    fetchNextGallery() // 初回ロード
+    fetchNextGallery()
     setupObserver()
   }
 })
@@ -76,10 +75,6 @@ watch(sentinelRef, (el) => {
   observer.disconnect()
   if (el) observer.observe(el)
 })
-
-watch([page, list, isScrollable], ([p, l, s]) => {
-  console.log('[Gallery]', { page: p, length: l.length, hasMore: s })
-})
 </script>
 
 <template>
@@ -89,13 +84,11 @@ watch([page, list, isScrollable], ([p, l, s]) => {
         <GalleryListItem :item="item" />
       </div>
 
-      <!-- ローディング -->
       <div class="loading" v-if="isLoading">
         <img src="@/assets/loading.svg" />
       </div>
     </div>
 
-    <!-- セントネル（最下部の監視対象） -->
     <div ref="sentinelRef" class="sentinel" aria-hidden="true" />
   </div>
 </template>

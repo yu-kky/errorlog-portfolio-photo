@@ -84,7 +84,6 @@ function handleParallax() {
   padding-bottom: 100px;
 }
 
-/* ファーストビュー */
 .hero {
   position: relative;
   height: 100vh;
@@ -143,7 +142,6 @@ function handleParallax() {
   }
 }
 
-/* 白背景セクション */
 .white-section {
   scroll-snap-align: start;
 }

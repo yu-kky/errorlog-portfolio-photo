@@ -107,7 +107,7 @@ const mode = props.mode
     color: currentColor;
     opacity: 0.9;
     line-height: 1;
-    padding-bottom: 4px; /* 下線の余白 */
+    padding-bottom: 4px;
     position: relative;
   }
 }
