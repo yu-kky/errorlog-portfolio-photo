@@ -2,15 +2,16 @@ rules_version = '2';
 service firebase.storage {
   match /b/{bucket}/o {
 
-    // ★ カルーセル用：一覧(list) と 取得(read) を許可
     match /carousel/{allPaths=**} {
+      allow read: if true;
+      allow write: if false;
       allow list: if true;
-      allow read: if true; // getDownloadURL など
     }
 
-    // 既存の他ルール（例）
     match /{allPaths=**} {
-      allow read
+      allow read: if true;
+      allow write: if false;
+      allow list: if false;
     }
   }
 }
