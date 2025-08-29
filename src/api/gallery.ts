@@ -1,5 +1,3 @@
-import photoData from './data.json'
-
 export type GalleryItem = {
   id: number
   title: string
@@ -29,7 +27,13 @@ export type PhotoCast = {
   account: string
 }
 
-const database = photoData as GalleryItem[]
+export async function loadGallery(): Promise<GalleryItem[]> {
+  const res = await fetch('/public/data.json', { cache: 'no-store' })
+  if (!res.ok) throw new Error('Failed to load gallery.json')
+  return res.json()
+}
+
+const database = await loadGallery()
 
 type Callback<T> = (result: T) => void
 

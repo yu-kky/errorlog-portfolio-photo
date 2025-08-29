@@ -5,7 +5,6 @@
   "hosting": {
     "public": "dist",
     "ignore": ["**/.*", "**/node_modules/**"],
-    "rewrites": [{ "source": "**", "destination": "/index.html" }],
     "headers": [
       {
         "source": "**/*.@(js|css)",
@@ -14,7 +13,12 @@
       {
         "source": "**/*.@(png|jpg|jpeg|gif|webp|svg)",
         "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+      },
+      {
+        "source": "public/*.json",
+        "headers": [{ "key": "Cache-Control", "value": "public, max-age=300, must-revalidate" }]
       }
-    ]
+    ],
+    "rewrites": [{ "source": "**", "destination": "/index.html" }]
   }
 }

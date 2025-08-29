@@ -31,4 +31,3 @@ coverage
 
 # private files
 .env
-/src/api/data.json
