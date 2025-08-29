@@ -3,6 +3,15 @@
 A personal photo portfolio built with **Vue 3**, **TypeScript**, and **Firebase**.  
 This project is a migration of an older Vue 2 version, refactored using the Composition API and modern tooling.
 
+[Live Demo](https://errorlog-dw.web.app/) • Screenshot ↓
+
+<p align="center">
+  <img src="./docs/images/preview1.jpg" alt="Home screenshot" width="500">
+</p>
+<p align="center">
+  <img src="./docs/images/preview2.jpg" alt="Home screenshot" width="500">
+</p>
+
 ---
 
 ## 🔧 Tech Stack
@@ -87,10 +96,3 @@ VITE_FIREBASE_APP_ID=your_app_id
 > 🔒 Make sure .env is listed in .gitignore.
 
 Use .env.sample as a reference template.
-
-## 📁 Project Structure Highlights
-
-- src/firebase/config.ts: Firebase initialization with env vars
-- src/components/: Vue 3 components using Composition API
-- src/composables/useGallery.ts: Encapsulated logic for image pagination and loading
-- .env / .env.sample: Separate sensitive data from codebase
