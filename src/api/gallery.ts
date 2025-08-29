@@ -28,8 +28,19 @@ export type PhotoCast = {
 }
 
 export async function loadGallery(): Promise<GalleryItem[]> {
-  const res = await fetch('/public/data.json', { cache: 'no-store' })
-  if (!res.ok) throw new Error('Failed to load gallery.json')
+  const base = import.meta.env.BASE_URL || '/'
+  const url = `${base.replace(/\/$/, '')}/data.json`
+
+  const res = await fetch(url, { cache: 'no-store' })
+
+  const ct = res.headers.get('content-type') || ''
+  if (!res.ok || !ct.includes('application/json')) {
+    const text = await res.text()
+    throw new Error(
+      `JSON取得失敗 url=${url} status=${res.status} ` +
+        `content-type=${ct} head=${text.slice(0, 60)}`,
+    )
+  }
   return res.json()
 }
 
